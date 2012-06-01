@@ -15,10 +15,12 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     data.cpp \
-    datagestion.cpp
+    datagestion.cpp \
+    calculexception.cpp
 
 HEADERS  += mainwindow.h \
     data.h \
-    datagestion.h
+    datagestion.h \
+    calculexception.h
 
 FORMS    += mainwindow.ui

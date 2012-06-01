@@ -3,6 +3,8 @@
 
 #include <string>
 
+namespace Nombre {
+
 class Data
 {
 public:
@@ -10,13 +12,14 @@ public:
 };
 
 class DataReelle : Data {
-
+    // getValue
 };
 
 class Entier : DataReelle {
 private:
     int valeur;
 public:
+    Entier(int i) : valeur(i) {}
 };
 
 class Rationnel : DataReelle {
@@ -43,4 +46,5 @@ private:
     string type;
 };
 
+}
 #endif // DATA_H
