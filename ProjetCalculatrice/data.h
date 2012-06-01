@@ -2,6 +2,7 @@
 #define DATA_H
 
 #include <string>
+#include "calculexception.h"
 
 namespace Nombre {
 
@@ -27,12 +28,23 @@ private:
     Entier numerateur;
     Entier denominateur;
 public:
+    Rationnel(int n, int d) {
+        if(d!=0) {
+            numerateur(n);
+            denominateur(d);
+        }
+        else {
+            throw CalculException("Denominateur de valeur 0");
+        }
+    }
 };
 
 class Reel : DataReelle {
 private:
     Entier partie_entiere;
     Entier partie_decimale;
+public:
+    Reel();
 };
 
 class Complexe : Data {
