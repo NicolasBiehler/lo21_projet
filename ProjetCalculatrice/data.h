@@ -74,7 +74,7 @@ public:
 // A définir
 class Operateur : public Data {
 private:
-    string type;
+    std::string type;
 };
 
 }

@@ -1,6 +1,8 @@
 #ifndef FACTORY_H
 #define FACTORY_H
 
+#include "data.h"
+
 class Factory {
 private:
     static Factory* instance;
@@ -11,7 +13,7 @@ private:
 public:
     static Factory& getInstance();
     static void releaseInstance();
-    void creer(QString s);
+    Data creer(QString s);
 };
 
 #endif // FACTORY_H
