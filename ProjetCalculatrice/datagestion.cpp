@@ -1,9 +1,9 @@
 #include "datagestion.h"
 
 DataGestion() {
-    pileAffichage = new Stack<QString>(10);
-    pileStockage = new Stack<Data>(10); // cette valeur ?
-    pileRetablir = new Stack<Data>(10);
+    pileAffichage = new QStack<QString>(10);
+    pileStockage = new QStack<Data>(10); // cette valeur ?
+    pileRetablir = new QStack<Data>(10);
     factoryInstance = Factory::getInstance();
 
 }

@@ -1,25 +1,30 @@
 #ifndef DATAGESTION_H
 #define DATAGESTION_H
 
-#include <stack>
+#include <QStack>
 #include <string>
 #include "data.h"
 #include "factory.h"
+#include "pile.h"
 
 class DataGestion {
 private:
-    stack<QString> pileAffichage;
-    stack<Data> pileStockage;
-    stack<Data> pileRetablir;
+    Pile<QString> pileAffichage;
+    Pile<Data> pileStockage;
+    Pile<Data> pileRetablir;
     Factory* factoryInstance;
 public:
     DataGestion();
     ~DataGestion();
-    stack<Data> getStockage() const {return pileStockage;}
-    stack<Data> getRetablir() const {return pileRetablir;}
-    stack<QString> getAffichage() const {return pileAffichage;}
-    stack<Data> parse(QString expression); // dans cette fonction : la factory
+    Pile<Data> getStockage() const {return pileStockage;}
+    Pile<Data> getRetablir() const {return pileRetablir;}
+    Pile<QString> getAffichage() const {return pileAffichage;}
+    Pile<Data> parse(QString expression); // update pileaffichage + pileretablir
     void calcul(); // appelle différente fonction suivant le contenu
+    void annuler();
+    void retablir();
+    void saveContexte();
+    void chargerContexte();
 };
 
 #endif // DATAGESTION_H
