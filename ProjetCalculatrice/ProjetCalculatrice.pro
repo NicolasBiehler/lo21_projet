@@ -16,11 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     data.cpp \
     datagestion.cpp \
-    calculexception.cpp
+    calculexception.cpp \
+    factory.cpp
 
 HEADERS  += mainwindow.h \
     data.h \
     datagestion.h \
-    calculexception.h
+    calculexception.h \
+    factory.h
 
 FORMS    += mainwindow.ui

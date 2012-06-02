@@ -6,24 +6,26 @@
 
 namespace Nombre {
 
-class Data
-{
+class Data {
 public:
-    Data();
+    Data() {}
 };
 
-class DataReelle : Data {
-    // getValue
+class DataReelle : public Data {
+public:
+    DataReelle() {}
 };
 
-class Entier : DataReelle {
+class Entier : public DataReelle {
 private:
     int valeur;
 public:
     Entier(int i) : valeur(i) {}
+    int getValeur() const {return valeur;}
+    void setValeur(int i) {valeur = i;}
 };
 
-class Rationnel : DataReelle {
+class Rationnel : public DataReelle {
 private:
     Entier numerateur;
     Entier denominateur;
@@ -37,23 +39,40 @@ public:
             throw CalculException("Denominateur de valeur 0");
         }
     }
+    Entier getNumerateur() const {return numerateur;}
+    Entier getDenominateur() const {return denominateur;}
+    void setNumerateur(int n) {numerateur(Entier(n));}
+    void setDenominateur(int d) {
+        if(d!=0)
+            denominateur(Entier(d));
+        else
+            throw CalculException("Denominateur de valeur 0");
+    }
 };
 
-class Reel : DataReelle {
+class Reel : public DataReelle {
 private:
-    Entier partie_entiere;
-    Entier partie_decimale;
+    double valeur;
 public:
-    Reel();
+    Reel(double d) : valeur(d) {}
+    double getValeur() const {return valeur;}
+    void setValeur(double v) const {valeur =v;}
 };
 
-class Complexe : Data {
+class Complexe : public Data {
 private:
     DataReelle partie_reelle;
     DataReelle partie_imaginaire;
+public:
+    Complexe(DataReelle r, DataReelle i) : partie_reelle(r), partie_imaginaire(i) {}
+    DataReelle getReel() const {return partie_reelle;}
+    DataReelle getImaginaire() const {return partie_imaginaire;}
+    void setReel(DataReelle r) {partie_reelle(r);}
+    void setImaginaire(DataReelle i) {partie_imaginaire(i);}
 };
 
-class Operateur : Data {
+// A définir
+class Operateur : public Data {
 private:
     string type;
 };

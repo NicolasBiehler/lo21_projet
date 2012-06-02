@@ -7,12 +7,18 @@
 
 class DataGestion {
 private:
-    stack<string> pileReception;
-    stack<Data> pileExecution;
+    stack<QString> pileAffichage;
+    stack<Data> pileStockage;
+    stack<Data> pileRetablir;
+    Factory* factoryInstance;
 public:
-    DataGestion(stack<string> s) : pileReception(s) {}
-    stack<Data> parse(string expression); // dans cette fonction : la factory
-    stack<Data> calcul(); // appelle différente fonction suivant le contenu
+    DataGestion();
+    ~DataGestion();
+    stack<Data> getStockage() {return pileStockage;}
+    stack<Data> getRetablir() {return pileRetablir;}
+    stack<QString> getAffichage() {return pileAffichage;}
+    stack<Data> parse(QString expression); // dans cette fonction : la factory
+    void calcul(); // appelle différente fonction suivant le contenu
 };
 
 #endif // DATAGESTION_H
