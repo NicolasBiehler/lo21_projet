@@ -18,13 +18,15 @@ SOURCES += main.cpp\
     datagestion.cpp \
     calculexception.cpp \
     factory.cpp \
-    pile.cpp
+    pile.cpp \
+    operateur.cpp
 
 HEADERS  += mainwindow.h \
     data.h \
     datagestion.h \
     calculexception.h \
     factory.h \
-    pile.h
+    pile.h \
+    operateur.h
 
 FORMS    += mainwindow.ui

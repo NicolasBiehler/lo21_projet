@@ -14,6 +14,9 @@ public:
 class DataReelle : public Data {
 public:
     DataReelle() {}
+    virtual Entier& toEntier() const;
+    virtual Reel& toReel() const;
+    virtual Rationnel& toRationnel() const;
 };
 
 class Entier : public DataReelle {
@@ -23,6 +26,9 @@ public:
     Entier(int i) : valeur(i) {}
     int getValeur() const {return valeur;}
     void setValeur(int i) {valeur = i;}
+    Reel& toReel() const;
+    Rationnel& toRationnel() const;
+    static bool isEntier(const QString& s);
 };
 
 class Rationnel : public DataReelle {
@@ -48,6 +54,10 @@ public:
         else
             throw CalculException("Denominateur de valeur 0");
     }
+    void simplifier();
+    static bool isRationnel(const QString& s);
+    Entier& toEntier() const;
+    Reel& toReel() const;
 };
 
 class Reel : public DataReelle {
@@ -57,6 +67,9 @@ public:
     Reel(double d) : valeur(d) {}
     double getValeur() const {return valeur;}
     void setValeur(double v) const {valeur =v;}
+    static bool isReel(const QString& s);
+    Entier& toEntier() const;
+    Rationnel& toRationnel() const;
 };
 
 class Complexe : public Data {
@@ -69,12 +82,7 @@ public:
     DataReelle getImaginaire() const {return partie_imaginaire;}
     void setReel(DataReelle r) {partie_reelle(r);}
     void setImaginaire(DataReelle i) {partie_imaginaire(i);}
-};
-
-// A définir
-class Operateur : public Data {
-private:
-    std::string type;
+    static bool isComplexe(const QString& s);
 };
 
 }
