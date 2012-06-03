@@ -2,10 +2,12 @@
 #define DATAGESTION_H
 
 #include <QStack>
+#include <QStringList>
 #include <string>
 #include "data.h"
 #include "factory.h"
 #include "pile.h"
+#include "operateur.h"
 
 class DataGestion {
 private:
