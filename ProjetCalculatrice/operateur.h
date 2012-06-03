@@ -23,12 +23,92 @@
 #define SQR "SQR"
 #define CUBE "CUBE"
 #define FACT "!"
-#define EVAL "EVAL"
 
+namespace Operateur {
 
 class Operateur : public Data {
 public:
     Operateur(QString op);
 };
 
+class Plus : public Operateur {
+
+};
+
+class Moins : public Operateur {
+
+};
+
+class Div : public Operateur {
+
+};
+
+class Mult : public Operateur {
+
+};
+
+class Pow : public Operateur {
+
+};
+
+class Mod : public Operateur {
+
+};
+
+class Sign : public Operateur {
+
+};
+
+class Sin : public Operateur {
+
+};
+
+class Cos : public Operateur {
+
+};
+
+class Tan : public Operateur {
+
+};
+
+class Sinh : public Operateur {
+
+};
+
+class Cosh : public Operateur {
+
+};
+
+class Tanh : public Operateur {
+
+};
+
+class Ln : public Operateur {
+
+};
+
+class Log : public Operateur {
+
+};
+
+class Inv : public Operateur {
+
+};
+
+class Sqrt : public Operateur {
+
+};
+}
+
+class Sqr : public Operateur {
+
+};
+
+class Cube : public Operateur {
+
+};
+
+class Fact : public Operateur {
+
+};
 #endif // OPERATEUR_H
