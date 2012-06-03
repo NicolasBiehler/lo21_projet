@@ -15,6 +15,11 @@ DataGestion::~DataGestion() {
 }
 
 void DataGestion::parse(QString expression) {
+    QStringList list = expression.split(" ");
+    foreach(QString s, list) {
+        DataGestion::pileAffichage.push(s);
+        DataGestion::pileStockage.push(DataGestion::factoryInstance->creer(s));
+    }
     /*test expression
             couper en morceau séparé par des ' '
             factory::creer sur chaque morceau
