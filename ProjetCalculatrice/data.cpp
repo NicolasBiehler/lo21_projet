@@ -4,11 +4,11 @@ using namespace Nombre;
 
 void Rationnel::simplifier() {
     Entier vpgcd = pgcd(Rationnel::numerateur, Rationnel::denominateur);
-    const Reel* num = Rationnel::numerateur.getValeur() / vpgcd.getValeur();
-    const Reel* den = Rationnel::denominateur.getValeur() / vpgcd.getValeur();
+    const Reel* num = new Reel(Rationnel::numerateur.getValeur() / vpgcd.getValeur());
+    const Reel* den = new Reel(Rationnel::denominateur.getValeur() / vpgcd.getValeur());
 
-    if(p_num_div==0 || p_den_div==0)
-        throw CalculatriceException("Simplification a échouée");
+    if(num==0 || den==0)
+        throw CalculException("Simplification a échouée");
 
     Rationnel::numerateur = num->toEntier();
     Rationnel::denominateur = den->toEntier();
@@ -27,13 +27,13 @@ Rationnel& Entier::toRationnel() const {
 }
 
 Entier& Rationnel::toEntier() const {
-    Entier* res= new Entier(Rationnel::numerateur::getValeur() / Rationnel::denominateur::getValeur());
+    Entier* res= new Entier(Rationnel::numerateur.getValeur() / Rationnel::denominateur.getValeur());
     Entier& ref = *res;
     return ref;
 }
 
 Reel& Rationnel::toReel() const {
-    double r = Rationnel::numerateur::getValeur() / Rationnel::denominateur::getValeur();
+    double r = Rationnel::numerateur.getValeur() / Rationnel::denominateur.getValeur();
     Reel* res = new Reel(r);
     Reel& ref = *res;
     return ref;
@@ -57,21 +57,32 @@ Rationnel& Reel::toRationnel() const {
 }
 
 bool Nombre::Entier::isEntier(const QString& s){
-    QRegExp regexp("^[\\d]+$");
+    QRegExp regexp(ENTIER);
     return (s.contains(regexp));
 }
 
 bool Nombre::Reel::isReel(const QString& s){
-    QRegExp regexp("^[\\d]+[\.][\\d]+$");
+    QRegExp regexp(REEL);
     return (s.contains(regexp));
 }
 
 bool Nombre::Rationnel::isRationnel(const QString& s){
-    QRegExp regexp("^[\\d]+\/[\\d]+$");
+
+    QRegExp regexp(RATIONNEL);
     return (s.contains(regexp));
 }
 
 bool Nombre::Complexe::isComplexe(const QString& s){
-    QRegExp regexp("^[\\d]+(([\.]|[\/])[\\d]+)?[\$][\\d]+(([\.]|[\/])[\\d]+)?$");
+    QRegExp regexp(COMPLEXE);
     return (s.contains(regexp));
+}
+
+Entier Rationnel::pgcd(const Entier& a, const Entier& b) {
+    Entier x(a.getValeur());
+    Entier y(b.getValeur());
+
+    if((y.getValeur())==0)
+        return x;
+    else
+        return pgcd(y,Entier(x.getValeur() % y.getValeur()));
 }

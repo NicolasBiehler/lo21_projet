@@ -1,6 +1,7 @@
 #include "datagestion.h"
 
-DataGestion() {
+DataGestion::DataGestion() {
+    // chargerContexte ?
     pileAffichage = new QStack<QString>(10);
     pileStockage = new QStack<Data>(10); // cette valeur ?
     pileRetablir = new QStack<Data>(10);
@@ -8,12 +9,12 @@ DataGestion() {
 
 }
 
-~DataGestion() {
+DataGestion::~DataGestion() {
 
     // TODO
 }
 
-stack<Data> parse(QString expression) {
+void DataGestion::parse(QString expression) {
     /*test expression
             couper en morceau séparé par des ' '
             factory::creer sur chaque morceau
@@ -23,4 +24,4 @@ stack<Data> parse(QString expression) {
             remplissage de affichage*/
 }
 
-void calcul();
+void DataGestion::calcul();

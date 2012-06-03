@@ -2,7 +2,16 @@
 #define DATA_H
 
 #include <string>
+#include <QString>
+#include <QStringList>
+#include <QRegExp>
+#include <math.h>
 #include "calculexception.h"
+
+#define RATIONNEL "^[\\d]+\/[\\d]+$"
+#define REEL "^[\\d]+[\.][\\d]+$"
+#define COMPLEXE "^[\\d]+(([\.]|[\/])[\\d]+)?[\$][\\d]+(([\.]|[\/])[\\d]+)?$"
+#define ENTIER "^[\\d]+$"
 
 namespace Nombre {
 
@@ -58,6 +67,7 @@ public:
     static bool isRationnel(const QString& s);
     Entier& toEntier() const;
     Reel& toReel() const;
+    Entier pgcd(const Entier& a, const Entier& b);
 };
 
 class Reel : public DataReelle {

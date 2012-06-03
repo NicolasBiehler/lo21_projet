@@ -18,7 +18,7 @@ void Factory::releaseInstance() {
 
 // les entrées sont découpés au niveau des ' ' et creer est appelée pour chaque élément
 // donc pas de calcul à gérer, un seul truc à la fois
-Data creer(QString s) {
+Data Factory::creer(QString s) {
     if(Nombre::Entier::isEntier(s)) {
 
     }

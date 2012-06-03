@@ -19,7 +19,7 @@ public:
     Pile<Data> getStockage() const {return pileStockage;}
     Pile<Data> getRetablir() const {return pileRetablir;}
     Pile<QString> getAffichage() const {return pileAffichage;}
-    Pile<Data> parse(QString expression); // update pileaffichage + pileretablir
+    void parse(QString expression); // update pileaffichage + pileretablir
     void calcul(); // appelle différente fonction suivant le contenu
     void annuler();
     void retablir();
