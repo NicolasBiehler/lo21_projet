@@ -25,6 +25,8 @@ public:
     void retablir();
     void saveContexte();
     void chargerContexte();
+    void close(); // appelle le destructeur + saveContexte
+    void open(); // appelle le constructeur + chargerContexte
 };
 
 #endif // DATAGESTION_H
