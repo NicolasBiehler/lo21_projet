@@ -17,12 +17,11 @@ namespace Nombre {
 
 class Data {
 public:
-    Data() {}
+    virtual QString& toString() const=0;
 };
 
 class DataReelle : public Data {
 public:
-    DataReelle() {}
     virtual Entier& toEntier() const;
     virtual Reel& toReel() const;
     virtual Rationnel& toRationnel() const;
@@ -38,6 +37,11 @@ public:
     Reel& toReel() const;
     Rationnel& toRationnel() const;
     static bool isEntier(const QString& s);
+    QString& toString() const {
+        QString* s = new QString("" + valeur);
+        QString& ref = *s;
+        return ref;
+    }
 };
 
 class Rationnel : public DataReelle {
@@ -68,6 +72,11 @@ public:
     Entier& toEntier() const;
     Reel& toReel() const;
     Entier pgcd(const Entier& a, const Entier& b);
+    QString& toString() const {
+        QString* s = new QString(numerateur.toString() + " / " + denominateur.toString());
+        QString& ref = *s;
+        return ref;
+    }
 };
 
 class Reel : public DataReelle {
@@ -80,6 +89,11 @@ public:
     static bool isReel(const QString& s);
     Entier& toEntier() const;
     Rationnel& toRationnel() const;
+    QString& toString() const {
+        QString* s = new QString("" + valeur);
+        QString& ref = *s;
+        return ref;
+    }
 };
 
 class Complexe : public Data {
@@ -93,6 +107,11 @@ public:
     void setReel(DataReelle r) {partie_reelle(r);}
     void setImaginaire(DataReelle i) {partie_imaginaire(i);}
     static bool isComplexe(const QString& s);
+    QString& toString() const {
+        QString* s = new QString(partie_reelle.toString() + " $ " + partie_imaginaire.toString());
+        QString& ref = *s;
+        return ref;
+    }
 };
 
 }

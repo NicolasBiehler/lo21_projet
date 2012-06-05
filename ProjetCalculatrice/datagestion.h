@@ -22,7 +22,7 @@ public:
     Pile<Data> getRetablir() const {return pileRetablir;}
     Pile<QString> getAffichage() const {return pileAffichage;}
     void parse(QString expression); // update pileaffichage + pileretablir
-    void calcul(); // appelle différente fonction suivant le contenu
+    void calcul(); // appelle différente fonction suivant le contenu --> strategy
     void annuler();
     void retablir();
     void saveContexte();

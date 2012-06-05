@@ -31,7 +31,26 @@ public:
 };
 
 class EntierOperateur : public Operateur {
-
+    Data plus()=0;
+    Data moins()=0;
+    Data div()=0;
+    Data mult()=0;
+    Data pow()=0;
+    Data mod()=0;
+    Data sign()=0;
+    Data sin()=0;
+    Data sinh()=0;
+    Data cos()=0;
+    Data cosh()=0;
+    Data tan()=0;
+    Data tanh()=0;
+    Data ln()=0;
+    Data log()=0;
+    Data inv()=0;
+    Data sqrt()=0;
+    Data sqr()=0;
+    Data cube()=0;
+    Data fact()=0;
 };
 
 class ReelOperateur : public Operateur {
