@@ -5,45 +5,90 @@
 
 namespace Operateur {
 
-class Operateur : public Data {
+class OperateurStrategy : public Data {
 public:
-    virtual Data plus()=0;
-    virtual Data moins()=0;
-    virtual Data div()=0;
-    virtual Data mult()=0;
-    virtual Data pow()=0;
-    virtual Data mod()=0;
-    virtual Data sign()=0;
-    virtual Data sin()=0;
-    virtual Data sinh()=0;
-    virtual Data cos()=0;
-    virtual Data cosh()=0;
-    virtual Data tan()=0;
-    virtual Data tanh()=0;
-    virtual Data ln()=0;
-    virtual Data log()=0;
-    virtual Data inv()=0;
-    virtual Data sqrt()=0;
-    virtual Data sqr()=0;
-    virtual Data cube()=0;
-    virtual Data fact()=0;
-
+    virtual Data calcul(Pile<Data>& p)=0;
 };
 
-class EntierOperateur : public Operateur {
-
+class Plus : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
 };
 
-class ReelOperateur : public Operateur {
-
+class Moins : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
 };
 
-class RationnelOperateur : public Operateur {
-
+class Div : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
 };
 
-class ComplexeOperateur : public Operateur {
-
+class Mult : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
 };
 
+class Pow : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Mod : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Sign : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Sin : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Cos : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Tan : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Sinh : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Cosh : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Tanh : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Ln : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Log : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Inv : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Sqrt : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Sqr : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Cube : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+class Fact : public OperateurStrategy {
+    Data calcul(Pile<Data>& p);
+};
+
+}
 #endif // OPERATEUR_H

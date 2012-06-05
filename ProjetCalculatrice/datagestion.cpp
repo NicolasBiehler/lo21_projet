@@ -29,4 +29,18 @@ void DataGestion::parse(QString expression) {
             remplissage de affichage*/
 }
 
-void DataGestion::calcul();
+void DataGestion::calcul() {
+    /*
+     *tant que pilestockage pas vide FAIRE
+     *  tete = x
+     *  x == Data
+     *  RIEN
+     *else if expression {
+     * parse
+     *}
+     *else {
+     *  op == Op1 ---> strategy1
+     *  op == op2 ----> strategy2
+     *}
+     */
+}
