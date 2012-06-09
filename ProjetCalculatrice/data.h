@@ -22,9 +22,9 @@ public:
 
 class DataReelle : public Data {
 public:
-    virtual Entier& toEntier() const;
-    virtual Reel& toReel() const;
-    virtual Rationnel& toRationnel() const;
+    virtual Nombre::Entier& toEntier() const;
+    virtual Nombre::Reel& toReel() const;
+    virtual Nombre::Rationnel& toRationnel() const;
 };
 
 class Entier : public DataReelle {
@@ -32,6 +32,7 @@ private:
     int valeur;
 public:
     Entier(int i) : valeur(i) {}
+    Entier(Entier& e) : valeur(e.valeur){}
     int getValeur() const {return valeur;}
     void setValeur(int i) {valeur = i;}
     Reel& toReel() const;
