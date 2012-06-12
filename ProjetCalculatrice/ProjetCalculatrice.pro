@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     calculexception.cpp \
     factory.cpp \
     pile.cpp \
-    operateur.cpp
+    operateur.cpp \
+    onglet.cpp
 
 HEADERS  += mainwindow.h \
     data.h \
@@ -27,6 +28,7 @@ HEADERS  += mainwindow.h \
     calculexception.h \
     factory.h \
     pile.h \
-    operateur.h
+    operateur.h \
+    onglet.h
 
 FORMS    += mainwindow.ui
