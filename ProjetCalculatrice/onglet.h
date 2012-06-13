@@ -3,7 +3,7 @@
 
 #include <QStack>
 #include <QTabWidget>
-#include "Pile.h"
+//#include "pile.h"
 
 class Onglet : public QTabWidget
 {

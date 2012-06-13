@@ -15,7 +15,7 @@ private:
 public:
     static Factory& getInstance();
     static void releaseInstance();
-    Nombre::Data creer(QString s);
+    Nombre::Data* creer(QString s);
 };
 
 class EntierFactory : public Factory {
@@ -35,7 +35,7 @@ class ComplexeFactory : public Factory {
 };
 
 class OperateurFactory : public Factory {
-    static Operateur& creer(QString s);
+   // static Operateur& creer(QString s);
 };
 
 #endif // FACTORY_H

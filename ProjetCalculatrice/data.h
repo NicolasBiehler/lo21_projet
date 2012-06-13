@@ -15,13 +15,20 @@
 
 namespace Nombre {
 
+class DataReelle;
+class Entier;
+class Reel;
+class Rationnel;
+class Complexe;
+
 class Data {
 public:
     virtual QString& toString() const=0;
+    virtual Data& clone() const=0;
 };
-
 class DataReelle : public Data {
 public:
+    DataReelle& clone() const;
     virtual Nombre::Entier& toEntier() const;
     virtual Nombre::Reel& toReel() const;
     virtual Nombre::Rationnel& toRationnel() const;
@@ -32,7 +39,7 @@ private:
     int valeur;
 public:
     Entier(int i) : valeur(i) {}
-    Entier(Entier& e) : valeur(e.valeur){}
+    Entier(const Entier& e) : valeur(e.valeur){}
     int getValeur() const {return valeur;}
     void setValeur(int i) {valeur = i;}
     Reel& toReel() const;
@@ -43,28 +50,43 @@ public:
         QString& ref = *s;
         return ref;
     }
+    Entier& clone() const {
+        Entier *e = new Entier(valeur);
+        Entier &ref = *e;
+        return ref;
+    }
 };
 
 class Rationnel : public DataReelle {
 private:
-    Entier numerateur;
-    Entier denominateur;
+    Entier* numerateur;
+    Entier* denominateur;
 public:
     Rationnel(int n, int d) {
         if(d!=0) {
-            numerateur(n);
-            denominateur(d);
+            numerateur = new Entier(n);
+            denominateur = new Entier(d);
         }
         else {
             throw CalculException("Denominateur de valeur 0");
         }
     }
-    Entier getNumerateur() const {return numerateur;}
-    Entier getDenominateur() const {return denominateur;}
-    void setNumerateur(int n) {numerateur(Entier(n));}
+    Rationnel(const Rationnel& e) {
+        numerateur->setValeur(e.getNumerateur().clone().getValeur());
+        denominateur->setValeur(e.getDenominateur().clone().getValeur());
+    }
+
+    ~Rationnel() {
+        delete numerateur;
+        delete denominateur;
+    }
+
+    Entier& getNumerateur() const {return numerateur->clone();}
+    Entier& getDenominateur() const {return denominateur->clone();}
+    void setNumerateur(int n) {numerateur->setValeur(n);}
     void setDenominateur(int d) {
         if(d!=0)
-            denominateur(Entier(d));
+            denominateur->setValeur(d);
         else
             throw CalculException("Denominateur de valeur 0");
     }
@@ -74,8 +96,13 @@ public:
     Reel& toReel() const;
     Entier pgcd(const Entier& a, const Entier& b);
     QString& toString() const {
-        QString* s = new QString(numerateur.toString() + " / " + denominateur.toString());
+        QString* s = new QString(numerateur->toString() + " / " + denominateur->toString());
         QString& ref = *s;
+        return ref;
+    }
+    Rationnel& clone() const {
+        Rationnel *e = new Rationnel(numerateur->getValeur(),denominateur->getValeur());
+        Rationnel &ref = *e;
         return ref;
     }
 };
@@ -85,32 +112,61 @@ private:
     double valeur;
 public:
     Reel(double d) : valeur(d) {}
+    Reel(const Reel& e) {
+        valeur = e.getValeur();
+    }
     double getValeur() const {return valeur;}
-    void setValeur(double v) const {valeur =v;}
+    void setValeur(double v) {valeur =v;}
     static bool isReel(const QString& s);
     Entier& toEntier() const;
     Rationnel& toRationnel() const;
     QString& toString() const {
-        QString* s = new QString("" + valeur);
-        QString& ref = *s;
+        QString s = QString::number(valeur);
+        QString& ref = s;
+        return ref;
+    }
+    Reel& clone() const {
+        Reel *e = new Reel(valeur);
+        Reel &ref = *e;
         return ref;
     }
 };
 
 class Complexe : public Data {
 private:
-    DataReelle partie_reelle;
-    DataReelle partie_imaginaire;
+    DataReelle * partie_reelle;
+    DataReelle * partie_imaginaire;
 public:
-    Complexe(DataReelle r, DataReelle i) : partie_reelle(r), partie_imaginaire(i) {}
-    DataReelle getReel() const {return partie_reelle;}
-    DataReelle getImaginaire() const {return partie_imaginaire;}
-    void setReel(DataReelle r) {partie_reelle(r);}
-    void setImaginaire(DataReelle i) {partie_imaginaire(i);}
+    Complexe(const DataReelle& r, const DataReelle& i) {
+        DataReelle& dr = r.clone();
+        DataReelle& di = i.clone();
+        partie_reelle = &dr;
+        partie_imaginaire = &di;
+    }
+    ~Complexe(){
+        delete partie_reelle;
+        delete partie_imaginaire;
+    }
+
+    DataReelle& getReel() const {return partie_reelle->clone();}
+    DataReelle& getImaginaire() const {return partie_imaginaire->clone();}
+    void setReel(const DataReelle& r) {
+        DataReelle& dr = r.clone();
+        partie_reelle = &dr;
+    }
+    void setImaginaire(const DataReelle& i) {
+        DataReelle& di = i.clone();
+        partie_imaginaire = &di;
+    }
     static bool isComplexe(const QString& s);
     QString& toString() const {
-        QString* s = new QString(partie_reelle.toString() + " $ " + partie_imaginaire.toString());
+        QString* s = new QString(partie_reelle->toString() + " $ " + partie_imaginaire->toString());
         QString& ref = *s;
+        return ref;
+    }
+    Complexe& clone() const {
+        Complexe *e = new Complexe(*partie_reelle, *partie_imaginaire);
+        Complexe &ref = *e;
         return ref;
     }
 };

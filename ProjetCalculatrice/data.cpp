@@ -3,15 +3,15 @@
 using namespace Nombre;
 
 void Rationnel::simplifier() {
-    Entier vpgcd = pgcd(Rationnel::numerateur, Rationnel::denominateur);
-    const Reel* num = new Reel(Rationnel::numerateur.getValeur() / vpgcd.getValeur());
-    const Reel* den = new Reel(Rationnel::denominateur.getValeur() / vpgcd.getValeur());
+    Entier vpgcd = pgcd(this->getNumerateur(), this->getDenominateur());
+    const Reel* num = new Reel(Rationnel::numerateur->getValeur() / vpgcd.getValeur());
+    const Reel* den = new Reel(Rationnel::denominateur->getValeur() / vpgcd.getValeur());
 
     if(num==0 || den==0)
         throw CalculException("Simplification a échouée");
 
-    Rationnel::numerateur = num->toEntier();
-    Rationnel::denominateur = den->toEntier();
+    Rationnel::numerateur = &num->toEntier();
+    Rationnel::denominateur = &den->toEntier();
 }
 
 Reel& Entier::toReel() const {
@@ -27,13 +27,13 @@ Rationnel& Entier::toRationnel() const {
 }
 
 Entier& Rationnel::toEntier() const {
-    Entier* res= new Entier(Rationnel::numerateur.getValeur() / Rationnel::denominateur.getValeur());
+    Entier* res= new Entier(Rationnel::numerateur->getValeur() / Rationnel::denominateur->getValeur());
     Entier& ref = *res;
     return ref;
 }
 
 Reel& Rationnel::toReel() const {
-    double r = Rationnel::numerateur.getValeur() / Rationnel::denominateur.getValeur();
+    double r = Rationnel::numerateur->getValeur() / Rationnel::denominateur->getValeur();
     Reel* res = new Reel(r);
     Reel& ref = *res;
     return ref;

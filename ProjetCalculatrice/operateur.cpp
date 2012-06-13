@@ -6,7 +6,7 @@ Data Plus::calcul(Pile<Data>& p) {
     Data op1 = p.pop();
     Data op2 = p.pop();
 
-    if(op1 == Nombre::Entier) { // moarf
+    if(op1 == Nombre::Entier) { // moarf typeid
         if(op2 == Nombre::Entier) {
             res = op1.valeur + op2.valeur;
         }
