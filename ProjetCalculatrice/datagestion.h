@@ -19,9 +19,10 @@ private:
 public:
     DataGestion();
     ~DataGestion();
-    Pile<Data> getStockage() const {return pileStockage;}
-    Pile<Data> getRetablir() const {return pileRetablir;}
-    Pile<QString> getAffichage() const {return pileAffichage;}
+    //Pile<Data> getStockage() const {return pileStockage;}
+    //Pile<Data> getRetablir() const {return pileRetablir;}
+    //Pile<QString> getAffichage() const {return pileAffichage;}
+    Factory& getFactory() const {return *factoryInstance;}
     void parse(QString expression); // update pileaffichage + pileretablir
     void calcul(); // appelle différente fonction suivant le contenu --> strategy
     void annuler();
@@ -30,6 +31,7 @@ public:
     void chargerContexte();
     void close(); // appelle le destructeur + saveContexte
     void open(); // appelle le constructeur + chargerContexte
+    DataGestion& clone() const;
 };
 
 #endif // DATAGESTION_H
