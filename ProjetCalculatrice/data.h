@@ -221,7 +221,8 @@ public:
         return ref;
     }
     static bool isOperateur(const QString& s);
-    bool isBinaire() const;
+    static bool isBinaire(const QString& s);
+    static int findOperateur(const QString& s);
 };
 
 }

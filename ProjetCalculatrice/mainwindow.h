@@ -64,11 +64,12 @@ private slots:
     void fermerOnglet(int index);
     void nouvelOnglet();
     void pointPressed();
-    void iPressed();
+    void slashPressed();
     void dollarPressed();
     void quotePressed();
     void changerOnglet(int index);
     void refreshUI(int index);
+    void evalPressed();
 
 private:
     Ui::MainWindow *ui;

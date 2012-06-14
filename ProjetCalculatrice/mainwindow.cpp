@@ -71,10 +71,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(mesonglets,SIGNAL(tabCloseRequested(int)),this,SLOT(fermerOnglet(int)));
     QObject::connect(ui->actionNouvel_Onglet,SIGNAL(triggered()),this,SLOT(nouvelOnglet()));
     QObject::connect(ui->pointButton,SIGNAL(clicked()),this,SLOT(pointPressed()));
-    QObject::connect(ui->iButton,SIGNAL(clicked()),this,SLOT(iPressed()));
+    QObject::connect(ui->slashButton,SIGNAL(clicked()),this,SLOT(slashPressed()));
     QObject::connect(ui->dollarButton,SIGNAL(clicked()),this,SLOT(dollarPressed()));
     QObject::connect(ui->quoteButton,SIGNAL(clicked()),this,SLOT(quotePressed()));
     QObject::connect(mesonglets,SIGNAL(currentChanged(int)),this,SLOT(changerOnglet(int)));
+    QObject::connect(ui->evalButton,SIGNAL(clicked()),this,SLOT(evalPressed()));
+
 
 }
 
@@ -123,64 +125,64 @@ void MainWindow::num9Pressed(){
 }
 /* Signaux à associer... */
 void MainWindow::SINPressed(){
-    ui->inputLine->insert("SIN");
+    ui->inputLine->insert(" SIN ");
 }
 void MainWindow::SINHPressed(){
-    ui->inputLine->insert("SINH");
+    ui->inputLine->insert(" SINH ");
 }
 void MainWindow::COSPressed(){
-    ui->inputLine->insert("COS");
+    ui->inputLine->insert(" COS ");
 }
 void MainWindow::COSHPressed(){
-    ui->inputLine->insert("COSH");
+    ui->inputLine->insert(" COSH ");
 }
 void MainWindow::TANPressed(){
-    ui->inputLine->insert("TAN");
+    ui->inputLine->insert(" TAN ");
 }
 void MainWindow::TANHPressed(){
-    ui->inputLine->insert("TANH");
+    ui->inputLine->insert(" TANH ");
 }
 void MainWindow::LNPressed(){
-    ui->inputLine->insert("LN");
+    ui->inputLine->insert(" LN ");
 }
 void MainWindow::LOGPressed(){
-    ui->inputLine->insert("LOG");
+    ui->inputLine->insert(" LOG ");
 }
 void MainWindow::SQRPressed(){
-    ui->inputLine->insert("SQR");
+    ui->inputLine->insert(" SQR ");
 }
 void MainWindow::SQRTPressed(){
-    ui->inputLine->insert("SQRT");
+    ui->inputLine->insert(" SQRT ");
 }
 void MainWindow::CUBEPressed(){
-    ui->inputLine->insert("CUBE");
+    ui->inputLine->insert(" CUBE ");
 }
 void MainWindow::INVPressed(){
-    ui->inputLine->insert("INV");
+    ui->inputLine->insert(" INV ");
 }
 void MainWindow::POWPressed(){
-    ui->inputLine->insert("^");
+    ui->inputLine->insert(" ^ ");
 }
 void MainWindow::MODPressed(){
-    ui->inputLine->insert("%");
+    ui->inputLine->insert(" % ");
 }
 void MainWindow::SIGNPressed(){
-    ui->inputLine->insert("SIGN");
+    ui->inputLine->insert(" SIGN ");
 }
 void MainWindow::FACTPressed(){
-    ui->inputLine->insert("!");
+    ui->inputLine->insert(" ! ");
 }
 void MainWindow::ADDPressed(){
-    ui->inputLine->insert("+");
+    ui->inputLine->insert(" + ");
 }
 void MainWindow::MINUSPressed(){
-    ui->inputLine->insert("-");
+    ui->inputLine->insert(" - ");
 }
 void MainWindow::MULTPressed(){
-    ui->inputLine->insert("*");
+    ui->inputLine->insert(" * ");
 }
 void MainWindow::DIVPressed(){
-    ui->inputLine->insert("/");
+    ui->inputLine->insert(" DIV ");
 }
 void MainWindow::spacePressed(){
     ui->inputLine->insert(" ");
@@ -188,14 +190,19 @@ void MainWindow::spacePressed(){
 void MainWindow::pointPressed(){
     ui->inputLine->insert(".");
 }
-void MainWindow::iPressed(){
-    ui->inputLine->insert("i");
+void MainWindow::slashPressed(){
+    ui->inputLine->insert("/");
 }
 void MainWindow::dollarPressed(){
     ui->inputLine->insert("$");
 }
 void MainWindow::quotePressed(){
     ui->inputLine->insert("'");
+}
+
+void MainWindow::evalPressed(){
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    ui->textEdit->setText(QString::number(tmp->tailleStockage()));
 }
 
 void MainWindow::ratioClicked(){
@@ -268,6 +275,7 @@ void MainWindow::nouvelOnglet(){
     mesonglets->setCurrentWidget(newonglet);
     Collection_Onglet::GetInstance().ajouterOnglet(newonglet);
     Collection_Onglet::GetInstance().SetActif(mesonglets->currentIndex());
+    refreshUI(mesonglets->currentIndex());
 }
 
 void MainWindow::changerOnglet(int index){
@@ -310,5 +318,4 @@ void MainWindow::refreshUI(int index){
         ui->integerButton->setChecked(0);
         break;
     }
-    //ui->nbelementaff->setMaximum(tmp->tailleStockage());
 }

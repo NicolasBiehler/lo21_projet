@@ -578,7 +578,7 @@
       <item row="7" column="2" colspan="2">
        <widget class="QPushButton" name="divButton">
         <property name="text">
-         <string>/</string>
+         <string>DIV</string>
         </property>
         <property name="shortcut">
          <string>/</string>
@@ -894,9 +894,9 @@
        </widget>
       </item>
       <item row="4" column="3">
-       <widget class="QPushButton" name="iButton">
+       <widget class="QPushButton" name="slashButton">
         <property name="text">
-         <string>i</string>
+         <string>/</string>
         </property>
         <property name="shortcut">
          <string>I</string>
@@ -1039,7 +1039,7 @@
          <string>EVAL</string>
         </property>
         <property name="shortcut">
-         <string>=</string>
+         <string>Return</string>
         </property>
        </widget>
       </item>

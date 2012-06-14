@@ -8,6 +8,7 @@
 #include "factory.h"
 #include "pile.h"
 #include "operateur.h"
+#include "calculexception.h"
 
 class DataGestion {
 private:
