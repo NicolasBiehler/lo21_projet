@@ -23,15 +23,18 @@ class Complexe;
 
 class Data {
 public:
+    Data() {}
     virtual QString& toString() const=0;
     virtual Data& clone() const=0;
 };
+
 class DataReelle : public Data {
 public:
-    DataReelle& clone() const;
-    virtual Nombre::Entier& toEntier() const;
-    virtual Nombre::Reel& toReel() const;
-    virtual Nombre::Rationnel& toRationnel() const;
+    DataReelle() {}
+    virtual DataReelle& clone() const=0;
+    virtual Nombre::Entier& toEntier() const=0;
+    virtual Nombre::Reel& toReel() const=0;
+    virtual Nombre::Rationnel& toRationnel() const=0;
 };
 
 class Entier : public DataReelle {
@@ -42,6 +45,7 @@ public:
     Entier(const Entier& e) : valeur(e.valeur){}
     int getValeur() const {return valeur;}
     void setValeur(int i) {valeur = i;}
+    Entier& toEntier() const{return this->clone();}
     Reel& toReel() const;
     Rationnel& toRationnel() const;
     static bool isEntier(const QString& s);
@@ -92,6 +96,7 @@ public:
     }
     void simplifier();
     static bool isRationnel(const QString& s);
+    Rationnel& toRationnel() const {return this->clone();}
     Entier& toEntier() const;
     Reel& toReel() const;
     Entier pgcd(const Entier& a, const Entier& b);
@@ -118,6 +123,7 @@ public:
     double getValeur() const {return valeur;}
     void setValeur(double v) {valeur =v;}
     static bool isReel(const QString& s);
+    Reel& toReel() const {return this->clone();}
     Entier& toEntier() const;
     Rationnel& toRationnel() const;
     QString& toString() const {

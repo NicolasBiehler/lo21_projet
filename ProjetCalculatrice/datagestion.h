@@ -11,9 +11,9 @@
 
 class DataGestion {
 private:
-    Pile<QString> pileAffichage;
-    Pile<Data> pileStockage;
-    Pile<Data> pileRetablir;
+    //Pile<QString> pileAffichage;
+    //Pile<Data> pileStockage;
+    //Pile<Data> pileRetablir;
     Factory* factoryInstance;
     Operateur::OperateurStrategy* calculStrategy;
 public:

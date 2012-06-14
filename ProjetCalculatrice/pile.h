@@ -3,12 +3,12 @@
 
 #include <QStack>
 
-class Pile : public QStack {
+class Pile /*: public QStack*/ {
 private:
     //type;
 
 public:
-    Pile(type data);
+    //Pile(type data);
     void SWAP();
     void SUM();
     void MEAN();

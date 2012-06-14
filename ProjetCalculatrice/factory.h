@@ -19,22 +19,27 @@ public:
 };
 
 class EntierFactory : public Factory {
+public:
     static Nombre::Entier& creer(QString s);
 };
 
 class ReelFactory : public Factory {
+public:
     static Nombre::Reel& creer(QString s);
 };
 
 class RationnelFactory : public Factory {
+public:
     static Nombre::Rationnel& creer(QString s);
 };
 
 class ComplexeFactory : public Factory {
+public:
     static Nombre::Complexe& creer(QString s);
 };
 
 class OperateurFactory : public Factory {
+public:
    // static Operateur& creer(QString s);
 };
 

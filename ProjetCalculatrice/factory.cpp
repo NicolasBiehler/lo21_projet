@@ -12,29 +12,32 @@ Factory& Factory::getInstance() {
 }
 
 void Factory::releaseInstance() {
-    if(f!=0)
+    if(instance!=0)
         delete instance;
-    f=0;
+    instance=0;
 }
 
 // les entrées sont découpés au niveau des ' ' et creer est appelée pour chaque élément
 // donc pas de calcul à gérer, un seul truc à la fois
 Data *Factory::creer(QString s) {
+    Data * d;
     if(Nombre::Entier::isEntier(s)) {
-        EntierFactory::creer(s);
+        *d = EntierFactory::creer(s);
     }
     else if(Nombre::Rationnel::isRationnel(s)) {
-        RationnelFactory::creer(s);
+        *d = RationnelFactory::creer(s);
     }
     else if(Nombre::Reel::isReel(s)) {
-        ReelFactory::creer(s);
+        *d = ReelFactory::creer(s);
     }
     else if(Nombre::Complexe::isComplexe(s)) {
-        ComplexeFactory::creer(s);
+        //*d = ComplexeFactory::creer(s);
     }
     else { // c'est un opérateur ou une mauvaise entrée
-        OperateurFactory::creer(s);
+        //OperateurFactory::creer(s);
+        d=0;
     }
+    return d;
 }
 
 Entier& EntierFactory::creer(QString s) {
@@ -44,7 +47,7 @@ Entier& EntierFactory::creer(QString s) {
 }
 
 Reel& ReelFactory::creer(QString s) {
-    Reel* res = new Rationnel(s.toDouble());
+    Reel* res = new Reel(s.toDouble());
     Reel& ref = *res;
     return ref;
 }
@@ -57,15 +60,15 @@ Rationnel& RationnelFactory::creer(QString s) {
     return ref;
 }
 
-Complexe& ComplexeFactory::creer(QString s) {
-    QStringList list = s.split("$");
-    DataReelle dr = Factory::getInstance().creer(list[O]);
-    DataReelle di = Factory::getInstance().creer(list[1]);
-    Complexe* res = new Complexe(dr,di);
+//Complexe& ComplexeFactory::creer(QString s) {
+   /* QStringList list = s.split("$");
+    DataReelle *dr = (DataReelle) Factory::getInstance().creer(list[0]);
+    DataReelle *di = (DataReelle) Factory::getInstance().creer(list[1]);
+    Complexe* res = new Complexe( *dr, *di);
     Complexe& ref = *res;
-    return ref;
-}
+    return ref;*/
+//}
 
-Operateur& OperateurFactory::creer(QString s) {
+//Operateur& OperateurFactory::creer(QString s) {
     // classe operateur a faire
-}
+//}
