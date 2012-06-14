@@ -16,6 +16,9 @@
 
 namespace Nombre {
 
+static QString OPERATEUR[]={"+","-","*","/","%","^","SIGN","SIN","COS","TAN","TANH",
+                       "SINH","COSH","LN","LOG","INV","SQRT","SQR","CUBE","!"};
+
 class DataReelle;
 class Entier;
 class Reel;
@@ -217,6 +220,8 @@ public:
         QString& ref = *e;
         return ref;
     }
+    static bool isOperateur(const QString& s);
+    bool isBinaire() const;
 };
 
 }

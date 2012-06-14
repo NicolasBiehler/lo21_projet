@@ -162,7 +162,7 @@ void MainWindow::POWPressed(){
     ui->inputLine->insert("^");
 }
 void MainWindow::MODPressed(){
-    ui->inputLine->insert("MOD");
+    ui->inputLine->insert("%");
 }
 void MainWindow::SIGNPressed(){
     ui->inputLine->insert("SIGN");

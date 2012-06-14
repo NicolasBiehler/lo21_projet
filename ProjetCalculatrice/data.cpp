@@ -92,3 +92,20 @@ Entier Rationnel::pgcd(const Entier& a, const Entier& b) {
     else
         return pgcd(y,Entier(x.getValeur() % y.getValeur()));
 }
+
+bool Operateur::isOperateur(const QString& s) {
+    for(int i=0; i<20;i++) {
+        if(s == Nombre::OPERATEUR[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Operateur::isBinaire() const {
+    if(Operateur::op == "SIGN" || Operateur::op == "+" || Operateur::op == "-"
+            || Operateur::op == "*" || Operateur::op == "/" || Operateur::op == "%"
+            || Operateur::op == "^")
+        return true;
+    return false;
+}

@@ -11,8 +11,8 @@ public:
     Pile(){}
     ~Pile(){}
     void SWAP(unsigned int x, unsigned int y); //echange les elements x & y de la pile
-    T SUM(const unsigned int x)const;   // Renvoie la Somme les x premiers elements de la pile
-    T MEAN(const unsigned int x)const;  //  Renvoie la Moyenne des x premiers elements de la pile
+    T * SUM(const unsigned int x)const;   // Renvoie la Somme les x premiers elements de la pile
+    T * MEAN(const unsigned int x)const;  //  Renvoie la Moyenne des x premiers elements de la pile
     void CLEAR(){ this->clear();}       // Vide la pile
     void DUP()const;   // Duplique le premier element de la pile
     void DROP(); //Libere le premier element de la pire
