@@ -26,7 +26,10 @@ public:
     void setComplexe(const bool val){this->complexe=val;}
     void setDegre(const bool val){this->degre=val;}
     void setType(const Constante val){this->type=val;}
-    //void ajouterStockage(DataGestion x){ this->stockage.addPile(x);}
+    bool getComplexe(){return complexe;}
+    bool getDegre(){return degre;}
+    Constante getType(){return type;}
+    //void ajouterStockage(const DataGestion x){ this->stockage.addPile(x);}
     void viderStockage(){this->stockage.CLEAR();}
     int tailleStockage(){return this->stockage.count();}
 };

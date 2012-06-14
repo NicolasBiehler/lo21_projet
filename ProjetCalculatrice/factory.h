@@ -45,7 +45,7 @@ public:
 
 class OperateurFactory : public Factory {
 public:
-   // static Operateur& creer(QString s);
+    static Nombre::Operateur& creer(QString s);
 };
 
 #endif // FACTORY_H

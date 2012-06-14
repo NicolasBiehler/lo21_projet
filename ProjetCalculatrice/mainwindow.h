@@ -20,6 +20,7 @@ public:
     explicit MainWindow(QWidget *parent);
     ~MainWindow();
     Onglet *mesonglets;
+    int nbonglet;
 
 private slots:
     void num0Pressed();
@@ -53,7 +54,7 @@ private slots:
     void MULTPressed();
     void DIVPressed();
     void spacePressed();
-    void ratioClicked(Onglet* currentOnglet);
+    void ratioClicked();
     void integerClicked();
     void realClicked();
     void radianClicked();
@@ -62,6 +63,12 @@ private slots:
     void falseComplexClicked();
     void fermerOnglet(int index);
     void nouvelOnglet();
+    void pointPressed();
+    void iPressed();
+    void dollarPressed();
+    void quotePressed();
+    void changerOnglet(int index);
+    void refreshUI(int index);
 
 private:
     Ui::MainWindow *ui;

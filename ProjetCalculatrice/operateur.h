@@ -7,7 +7,7 @@
 
 using namespace Nombre;
 
-namespace Operateur {
+namespace Operation {
 
 class OperateurStrategy : public Data {
 public:

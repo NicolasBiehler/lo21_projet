@@ -15,7 +15,7 @@ private:
     Pile<Data> * pileStockage;
     Pile<Data> * pileRetablir;
     Factory* factoryInstance;
-    Operateur::OperateurStrategy* calculStrategy;
+    Operation::OperateurStrategy* calculStrategy;
 public:
     DataGestion();
     ~DataGestion();

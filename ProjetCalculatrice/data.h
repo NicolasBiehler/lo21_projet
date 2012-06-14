@@ -22,6 +22,7 @@ class Reel;
 class Rationnel;
 class Complexe;
 class Expression;
+class Operateur;
 
 class Data {
 public:
@@ -185,7 +186,7 @@ private:
 public:
     Expression(QString s) : exp(s) {}
     ~Expression() {}
-    void setExp(QString s) {exp = s;}
+    void setExp(const QString& s) {exp = s;}
     Expression& clone() const {
         Expression *e = new Expression(exp);
         Expression &ref = *e;
@@ -197,6 +198,25 @@ public:
         return ref;
     }
     static bool isExpression(const QString& s);
+};
+
+class Operateur : public Data {
+private:
+    QString op;
+public:
+    Operateur(QString s) : op(s) {}
+    ~Operateur(){}
+    void setOp(const QString& s) {op = s;}
+    Operateur& clone() const {
+        Operateur *e = new Operateur(op);
+        Operateur& ref = *e;
+        return ref;
+    }
+    QString& toString() const {
+        QString *e = new QString(op);
+        QString& ref = *e;
+        return ref;
+    }
 };
 
 }

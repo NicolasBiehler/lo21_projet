@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    nbonglet=0;
     mesonglets = new Onglet();
     //Collection_Onglet::GetInstance().ajouterOnglet(mesonglets);
     ui->setupUi(this);
@@ -69,6 +70,11 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->falseComplexButton,SIGNAL(clicked()),this,SLOT(falseComplexClicked()));
     QObject::connect(mesonglets,SIGNAL(tabCloseRequested(int)),this,SLOT(fermerOnglet(int)));
     QObject::connect(ui->actionNouvel_Onglet,SIGNAL(triggered()),this,SLOT(nouvelOnglet()));
+    QObject::connect(ui->pointButton,SIGNAL(clicked()),this,SLOT(pointPressed()));
+    QObject::connect(ui->iButton,SIGNAL(clicked()),this,SLOT(iPressed()));
+    QObject::connect(ui->dollarButton,SIGNAL(clicked()),this,SLOT(dollarPressed()));
+    QObject::connect(ui->quoteButton,SIGNAL(clicked()),this,SLOT(quotePressed()));
+    QObject::connect(mesonglets,SIGNAL(currentChanged(int)),this,SLOT(changerOnglet(int)));
 
 }
 
@@ -179,70 +185,130 @@ void MainWindow::DIVPressed(){
 void MainWindow::spacePressed(){
     ui->inputLine->insert(" ");
 }
+void MainWindow::pointPressed(){
+    ui->inputLine->insert(".");
+}
+void MainWindow::iPressed(){
+    ui->inputLine->insert("i");
+}
+void MainWindow::dollarPressed(){
+    ui->inputLine->insert("$");
+}
+void MainWindow::quotePressed(){
+    ui->inputLine->insert("'");
+}
 
-void MainWindow::ratioClicked(Onglet* currentOnglet){
+void MainWindow::ratioClicked(){
     ui->ratioButton->setChecked(1);
     ui->realButton->setChecked(0);
     ui->integerButton->setChecked(0);
-    currentOnglet->setType(Ratio);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setType(Ratio);
 }
 
 void MainWindow::realClicked(){
     ui->realButton->setChecked(1);
     ui->ratioButton->setChecked(0);
     ui->integerButton->setChecked(0);
- //   Onglet * tmp = mesonglets->CurrentWidget();
- //   tmp->setType(Real);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setType(Real);
 }
 
 void MainWindow::integerClicked(){
     ui->integerButton->setChecked(1);
     ui->realButton->setChecked(0);
     ui->ratioButton->setChecked(0);
-  //  Onglet * tmp = mesonglets->CurrentWidget();
-  //  tmp->setType(Integer);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setType(Integer);
 }
 
 void MainWindow::trueComplexClicked(){
     ui->trueComplexButton->setChecked(1);
     ui->falseComplexButton->setChecked(0);
-   // Onglet * tmp = mesonglets->CurrentWidget();
-   // tmp->setDegre(true);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setComplexe(true);
 }
 void MainWindow::falseComplexClicked(){
     ui->falseComplexButton->setChecked(1);
     ui->trueComplexButton->setChecked(0);
-   // Onglet * tmp = mesonglets->CurrentWidget();
-   // tmp->setComplexe(false);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setComplexe(false);
 }
 void MainWindow::degreClicked(){
     ui->degreButton->setChecked(1);
     ui->radianButton->setChecked(0);
-   // Onglet * tmp = mesonglets->CurrentWidget();
-   // tmp->setDegre(true);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setDegre(true);
 }
 void MainWindow::radianClicked(){
     ui->radianButton->setChecked(1);
     ui->degreButton->setChecked(0);
-   // Onglet * tmp  =mesonglets->CurrentWidget();
-   // tmp->setDegre(false);
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->setDegre(false);
 }
 
 
 void MainWindow::fermerOnglet(int index){
-    if(mesonglets->count()>1)
-        //Collection_Onglet::
+    if(mesonglets->count()>1){
         mesonglets->removeTab(index);
+        Collection_Onglet::GetInstance().supprimerOnglet(index);
+        Collection_Onglet::GetInstance().SetActif(mesonglets->currentIndex());
+        refreshUI(mesonglets->currentIndex());
+    }
+
     else
         QMessageBox::critical(this,tr("Erreur"), tr("Il faut au moins un onglet!"));
 }
 
-
 void MainWindow::nouvelOnglet(){
     Onglet *newonglet = new Onglet();
     QString nom = "Calc";
-    mesonglets->addTab(newonglet,nom.append(QString::number(mesonglets->count())));
+    nbonglet++;
+    mesonglets->addTab(newonglet,nom.append(QString::number(nbonglet)));
     mesonglets->setCurrentWidget(newonglet);
     Collection_Onglet::GetInstance().ajouterOnglet(newonglet);
+    Collection_Onglet::GetInstance().SetActif(mesonglets->currentIndex());
 }
 
+void MainWindow::changerOnglet(int index){
+    if(index < Collection_Onglet::GetInstance().size()){
+        Collection_Onglet::GetInstance().SetActif(index);
+        refreshUI(index);
+    }
+}
+
+void MainWindow::refreshUI(int index){
+    Onglet * tmp = Collection_Onglet::GetInstance().at(index);
+    if(tmp->getComplexe()){
+        ui->trueComplexButton->setChecked(1);
+        ui->falseComplexButton->setChecked(0);
+    }else{
+        ui->falseComplexButton->setChecked(1);
+        ui->trueComplexButton->setChecked(0);
+    }
+    if(tmp->getDegre()){
+        ui->degreButton->setChecked(1);
+        ui->radianButton->setChecked(0);
+    }else{
+        ui->degreButton->setChecked(0);
+        ui->radianButton->setChecked(1);
+    }
+    switch(tmp->getType()){
+    case Integer:
+        ui->integerButton->setChecked(1);
+        ui->realButton->setChecked(0);
+        ui->ratioButton->setChecked(0);
+        break;
+    case Real:
+        ui->realButton->setChecked(1);
+        ui->ratioButton->setChecked(0);
+        ui->integerButton->setChecked(0);
+        break;
+    case Ratio:
+        ui->ratioButton->setChecked(1);
+        ui->realButton->setChecked(0);
+        ui->integerButton->setChecked(0);
+        break;
+    }
+    //ui->nbelementaff->setMaximum(tmp->tailleStockage());
+}

@@ -7,12 +7,14 @@
 class Collection_Onglet : public QVector<Onglet *>
 {
 private :
+    int actif;
     static Collection_Onglet * instance;
     Collection_Onglet(){}
-    Collection_Onglet(const Collection_Onglet&){}
     ~Collection_Onglet(){}
     void operator=(const Collection_Onglet&);
 public:
+    void SetActif(const int x) {actif=x;}
+    int GetActif() const {return actif;}
     static Collection_Onglet& GetInstance();
     static void LibereInstance();
     void ajouterOnglet(Onglet * monOnglet);

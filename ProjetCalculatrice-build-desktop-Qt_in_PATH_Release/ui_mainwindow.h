@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Jun 14 19:08:27 2012
+** Created: Thu Jun 14 19:31:31 2012
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -130,7 +130,7 @@ public:
     QPushButton *num2;
     QPushButton *num3;
     QPushButton *num0;
-    QPushButton *virgule;
+    QPushButton *pointButton;
     QPushButton *spaceButton;
     QPushButton *deleteButton;
     QPushButton *evalButton;
@@ -720,10 +720,10 @@ public:
 
         NumPad->addWidget(num0, 8, 1, 1, 1);
 
-        virgule = new QPushButton(layoutWidget3);
-        virgule->setObjectName(QString::fromUtf8("virgule"));
+        pointButton = new QPushButton(layoutWidget3);
+        pointButton->setObjectName(QString::fromUtf8("pointButton"));
 
-        NumPad->addWidget(virgule, 8, 2, 1, 1);
+        NumPad->addWidget(pointButton, 8, 2, 1, 1);
 
         spaceButton = new QPushButton(layoutWidget3);
         spaceButton->setObjectName(QString::fromUtf8("spaceButton"));
@@ -932,7 +932,7 @@ public:
         label_4->setText(QApplication::translate("MainWindow", "Binaires", 0, QApplication::UnicodeUTF8));
         label_5->setText(QApplication::translate("MainWindow", "Unaires", 0, QApplication::UnicodeUTF8));
         quoteButton->setText(QApplication::translate("MainWindow", "'", 0, QApplication::UnicodeUTF8));
-        quoteButton->setShortcut(QApplication::translate("MainWindow", "'", 0, QApplication::UnicodeUTF8));
+        quoteButton->setShortcut(QApplication::translate("MainWindow", "Ctrl+'", 0, QApplication::UnicodeUTF8));
         dollarButton->setText(QApplication::translate("MainWindow", "$", 0, QApplication::UnicodeUTF8));
         dollarButton->setShortcut(QApplication::translate("MainWindow", "$", 0, QApplication::UnicodeUTF8));
         iButton->setText(QApplication::translate("MainWindow", "i", 0, QApplication::UnicodeUTF8));
@@ -957,8 +957,8 @@ public:
         num3->setShortcut(QApplication::translate("MainWindow", "3", 0, QApplication::UnicodeUTF8));
         num0->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
         num0->setShortcut(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
-        virgule->setText(QApplication::translate("MainWindow", ",", 0, QApplication::UnicodeUTF8));
-        virgule->setShortcut(QApplication::translate("MainWindow", ",", 0, QApplication::UnicodeUTF8));
+        pointButton->setText(QApplication::translate("MainWindow", ",", 0, QApplication::UnicodeUTF8));
+        pointButton->setShortcut(QApplication::translate("MainWindow", ",", 0, QApplication::UnicodeUTF8));
         spaceButton->setText(QApplication::translate("MainWindow", "Space", 0, QApplication::UnicodeUTF8));
         spaceButton->setShortcut(QApplication::translate("MainWindow", "Space", 0, QApplication::UnicodeUTF8));
         deleteButton->setText(QApplication::translate("MainWindow", "del", 0, QApplication::UnicodeUTF8));

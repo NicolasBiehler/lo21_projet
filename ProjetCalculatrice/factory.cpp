@@ -18,7 +18,7 @@ void Factory::releaseInstance() {
 }
 
 Data *Factory::creer(QString s) {
-    Data * d;
+    Data * d=0;
     if(Nombre::Entier::isEntier(s)) {
         *d = EntierFactory::creer(s);
     }
@@ -35,8 +35,7 @@ Data *Factory::creer(QString s) {
         *d = ExpressionFactory::creer(s);
     }
     else { // c'est un opérateur ou une mauvaise entrée
-        //OperateurFactory::creer(s);
-        d=0;
+        OperateurFactory::creer(s);
     }
     return d;
 }
@@ -76,6 +75,8 @@ Expression& ExpressionFactory::creer(QString s) {
     return ref;
 }
 
-//Operateur& OperateurFactory::creer(QString s) {
-    // classe operateur a faire
-//}
+Operateur& OperateurFactory::creer(QString s) {
+    Operateur *o = new Operateur(s);
+    Operateur& ref = *o;
+    return ref;
+}
