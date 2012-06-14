@@ -9,7 +9,7 @@ using namespace Nombre;
 
 namespace Operation {
 
-class OperateurStrategy : public Data {
+class OperateurStrategy {
 public:
     //virtual Data calcul(Pile<Data>& p)=0;
 };

@@ -91,7 +91,7 @@ void DataGestion::calcul() {
         default:
             throw CalculException("Operateur non reconnu, videz la pile svp");
         }
-        operateurStrategy->calcul(pileStockage);
+       // calculStrategy->calcul(pileStockage);
     }
     // sinon, rien a faire, rien a calculer
 }

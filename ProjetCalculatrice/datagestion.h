@@ -28,8 +28,6 @@ public:
     void calcul(); // appelle différente fonction suivant le contenu --> strategy
     void annuler();
     void retablir();
-    void saveContexte();
-    void chargerContexte();
     void close(); // appelle le destructeur + saveContexte
     void open(); // appelle le constructeur + chargerContexte
     DataGestion& clone() const;

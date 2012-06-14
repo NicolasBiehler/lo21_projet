@@ -3,6 +3,8 @@
 
 #include <QVector>
 #include "onglet.h"
+#include <fstream>
+#include "calculexception.h"
 
 class Collection_Onglet : public QVector<Onglet *>
 {
@@ -20,6 +22,8 @@ public:
     void ajouterOnglet(Onglet * monOnglet);
     int taille(){return this->count();}
     void supprimerOnglet(int index);
+    void saveContexte();
+    void chargerContexte();
 };
 
 #endif // COLLECTION_ONGLET_H
