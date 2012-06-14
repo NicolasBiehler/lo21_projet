@@ -16,7 +16,7 @@
 
 namespace Nombre {
 
-static QString OPERATEUR[]={"+","-","*","/","%","^","SIGN","SIN","COS","TAN","TANH",
+static QString OPERATEUR[]={"+","-","*","DIV","%","^","SIGN","SIN","COS","TAN","TANH",
                        "SINH","COSH","LN","LOG","INV","SQRT","SQR","CUBE","!"};
 
 class DataReelle;

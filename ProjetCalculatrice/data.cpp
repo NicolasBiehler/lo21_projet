@@ -104,7 +104,7 @@ bool Operateur::isOperateur(const QString& s) {
 
 bool Operateur::isBinaire() const {
     if(Operateur::op == "SIGN" || Operateur::op == "+" || Operateur::op == "-"
-            || Operateur::op == "*" || Operateur::op == "/" || Operateur::op == "%"
+            || Operateur::op == "*" || Operateur::op == "DIV" || Operateur::op == "%"
             || Operateur::op == "^")
         return true;
     return false;
