@@ -38,6 +38,11 @@ public:
     static Nombre::Complexe& creer(QString s);
 };
 
+class ExpressionFactory : public Factory {
+public:
+    static Nombre::Expression& creer(QString s);
+};
+
 class OperateurFactory : public Factory {
 public:
    // static Operateur& creer(QString s);

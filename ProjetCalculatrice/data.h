@@ -5,13 +5,14 @@
 #include <QString>
 #include <QStringList>
 #include <QRegExp>
-#include <math.h>
+#include <cmath>
 #include "calculexception.h"
 
 #define RATIONNEL "^[\\d]+\/[\\d]+$"
 #define REEL "^[\\d]+[\.][\\d]+$"
 #define COMPLEXE "^[\\d]+(([\.]|[\/])[\\d]+)?[\$][\\d]+(([\.]|[\/])[\\d]+)?$"
 #define ENTIER "^[\\d]+$"
+#define EXPRESSION "'"
 
 namespace Nombre {
 
@@ -20,6 +21,7 @@ class Entier;
 class Reel;
 class Rationnel;
 class Complexe;
+class Expression;
 
 class Data {
 public:
@@ -175,6 +177,26 @@ public:
         Complexe &ref = *e;
         return ref;
     }
+};
+
+class Expression : public Data {
+private:
+    QString exp;
+public:
+    Expression(QString s) : exp(s) {}
+    ~Expression() {}
+    void setExp(QString s) {exp = s;}
+    Expression& clone() const {
+        Expression *e = new Expression(exp);
+        Expression &ref = *e;
+        return ref;
+    }
+    QString& toString() const {
+        QString * e = new QString(exp);
+        QString& ref = *e;
+        return ref;
+    }
+    static bool isExpression(const QString& s);
 };
 
 }

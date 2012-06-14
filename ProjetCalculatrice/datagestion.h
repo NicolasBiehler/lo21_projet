@@ -11,17 +11,17 @@
 
 class DataGestion {
 private:
-    //Pile<QString> pileAffichage;
-    //Pile<Data> pileStockage;
-    //Pile<Data> pileRetablir;
+    Pile<QString> * pileAffichage;
+    Pile<Data> * pileStockage;
+    Pile<Data> * pileRetablir;
     Factory* factoryInstance;
     Operateur::OperateurStrategy* calculStrategy;
 public:
     DataGestion();
     ~DataGestion();
-    //Pile<Data> getStockage() const {return pileStockage;}
-    //Pile<Data> getRetablir() const {return pileRetablir;}
-    //Pile<QString> getAffichage() const {return pileAffichage;}
+    Pile<Data>& getStockage() const {return *pileStockage;}
+    Pile<Data>& getRetablir() const {return *pileRetablir;}
+    Pile<QString>& getAffichage() const {return *pileAffichage;}
     Factory& getFactory() const {return *factoryInstance;}
     void parse(QString expression); // update pileaffichage + pileretablir
     void calcul(); // appelle différente fonction suivant le contenu --> strategy

@@ -1,12 +1,34 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "onglet.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    mesonglets = new Onglet();
+    //Collection_Onglet::GetInstance().ajouterOnglet(mesonglets);
     ui->setupUi(this);
+    QVBoxLayout* l = new QVBoxLayout();
+    ui->centralWidget->setLayout(l);
+   // Onglet * onglet1 = new Onglet();
+    l->addWidget(mesonglets);
+    //mesonglets->addTab(onglet1,"Calc");
+    l->addWidget(ui->frame);
+    mesonglets->setMaximumHeight(24);
+    mesonglets->setTabsClosable(true);
+
+    nouvelOnglet();
+
+  /*  int i=2, a=3;
+    onglet1->ajouterStockage(i);
+    onglet1->ajouterStockage(a);
+    onglet1->viderStockage();
+    onglet1->ajouterStockage(i);*/
+    //ui->textEdit->setText(QString::number(onglet1->tailleStockage()));
+
+
+    //mesonglets->setBackgroundRole(QPalette::Background);
     QObject::connect(ui->num0,SIGNAL(clicked()),this,SLOT(num0Pressed()));
     QObject::connect(ui->num1,SIGNAL(clicked()),this,SLOT(num1Pressed()));
     QObject::connect(ui->num2,SIGNAL(clicked()),this,SLOT(num2Pressed()));
@@ -45,9 +67,9 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->radianButton,SIGNAL(clicked()),this,SLOT(radianClicked()));
     QObject::connect(ui->trueComplexButton,SIGNAL(clicked()),this,SLOT(trueComplexClicked()));
     QObject::connect(ui->falseComplexButton,SIGNAL(clicked()),this,SLOT(falseComplexClicked()));
-    QObject::connect(ui->tabWidget,SIGNAL(tabCloseRequested(int)),this,SLOT(fermerOnglet()));
-    ui->tabWidget->removeTab(1);
-    QObject::connect(ui->actionNouvel_Onglet,SIGNAL(triggered()),this,SLOT(nouvelOngletbis()));
+    QObject::connect(mesonglets,SIGNAL(tabCloseRequested(int)),this,SLOT(fermerOnglet(int)));
+    QObject::connect(ui->actionNouvel_Onglet,SIGNAL(triggered()),this,SLOT(nouvelOnglet()));
+
 }
 
 MainWindow::~MainWindow()
@@ -158,57 +180,69 @@ void MainWindow::spacePressed(){
     ui->inputLine->insert(" ");
 }
 
-void MainWindow::ratioClicked(){
+void MainWindow::ratioClicked(Onglet* currentOnglet){
     ui->ratioButton->setChecked(1);
     ui->realButton->setChecked(0);
     ui->integerButton->setChecked(0);
+    currentOnglet->setType(Ratio);
 }
 
 void MainWindow::realClicked(){
     ui->realButton->setChecked(1);
     ui->ratioButton->setChecked(0);
     ui->integerButton->setChecked(0);
+ //   Onglet * tmp = mesonglets->CurrentWidget();
+ //   tmp->setType(Real);
 }
 
 void MainWindow::integerClicked(){
     ui->integerButton->setChecked(1);
     ui->realButton->setChecked(0);
     ui->ratioButton->setChecked(0);
+  //  Onglet * tmp = mesonglets->CurrentWidget();
+  //  tmp->setType(Integer);
 }
 
 void MainWindow::trueComplexClicked(){
     ui->trueComplexButton->setChecked(1);
     ui->falseComplexButton->setChecked(0);
+   // Onglet * tmp = mesonglets->CurrentWidget();
+   // tmp->setDegre(true);
 }
 void MainWindow::falseComplexClicked(){
     ui->falseComplexButton->setChecked(1);
     ui->trueComplexButton->setChecked(0);
+   // Onglet * tmp = mesonglets->CurrentWidget();
+   // tmp->setComplexe(false);
 }
 void MainWindow::degreClicked(){
     ui->degreButton->setChecked(1);
     ui->radianButton->setChecked(0);
+   // Onglet * tmp = mesonglets->CurrentWidget();
+   // tmp->setDegre(true);
 }
 void MainWindow::radianClicked(){
     ui->radianButton->setChecked(1);
     ui->degreButton->setChecked(0);
+   // Onglet * tmp  =mesonglets->CurrentWidget();
+   // tmp->setDegre(false);
 }
 
-void MainWindow::fermerOnglet(){
-    if(ui->tabWidget->count()>1)
-        ui->tabWidget->removeTab(ui->tabWidget->currentIndex());
+
+void MainWindow::fermerOnglet(int index){
+    if(mesonglets->count()>1)
+        //Collection_Onglet::
+        mesonglets->removeTab(index);
     else
         QMessageBox::critical(this,tr("Erreur"), tr("Il faut au moins un onglet!"));
 }
-void MainWindow::nouvelOnglet(){
-    QWidget *newtab = new QTabWidget(this);
-    QString nom = "Calc";
-    ui->tabWidget->addTab(newtab,nom.append(QString::number(ui->tabWidget->count())));
-    //ui->tabWidget->setTabText(ui->tabWidget->currentIndex(),nom.append(QString::number(ui->tabWidget->currentIndex())));
-}
 
-void MainWindow::nouvelOngletbis(){
+
+void MainWindow::nouvelOnglet(){
     Onglet *newonglet = new Onglet();
     QString nom = "Calc";
-    ui->tabWidget->addTab(newonglet->tab,nom.append(QString::number(ui->tabWidget->count())));
-    //ui->tabWidget->setTabText(ui->tabWidget->currentIndex(),nom.append(QString::number(ui->tabWidget->currentIndex())));
+    mesonglets->addTab(newonglet,nom.append(QString::number(mesonglets->count())));
+    mesonglets->setCurrentWidget(newonglet);
+    Collection_Onglet::GetInstance().ajouterOnglet(newonglet);
 }
+

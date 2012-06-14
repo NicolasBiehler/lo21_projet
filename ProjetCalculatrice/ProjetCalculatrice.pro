@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     factory.cpp \
     pile.cpp \
     operateur.cpp \
-    onglet.cpp
+    onglet.cpp \
+    collection_onglet.cpp
 
 HEADERS  += mainwindow.h \
     data.h \
@@ -29,6 +30,7 @@ HEADERS  += mainwindow.h \
     factory.h \
     pile.h \
     operateur.h \
-    onglet.h
+    onglet.h \
+    collection_onglet.h
 
 FORMS    += mainwindow.ui

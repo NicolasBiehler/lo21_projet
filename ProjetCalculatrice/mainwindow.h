@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QString>
+#include "onglet.h"
+#include "collection_onglet.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -14,10 +17,11 @@ class MainWindow : public QMainWindow
     Q_OBJECT
     
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent);
     ~MainWindow();
+    Onglet *mesonglets;
 
-public slots:
+private slots:
     void num0Pressed();
     void num1Pressed();
     void num2Pressed();
@@ -49,16 +53,15 @@ public slots:
     void MULTPressed();
     void DIVPressed();
     void spacePressed();
-    void ratioClicked();
+    void ratioClicked(Onglet* currentOnglet);
     void integerClicked();
     void realClicked();
     void radianClicked();
     void degreClicked();
     void trueComplexClicked();
     void falseComplexClicked();
-    void fermerOnglet();
+    void fermerOnglet(int index);
     void nouvelOnglet();
-    void nouvelOngletbis();
 
 private:
     Ui::MainWindow *ui;

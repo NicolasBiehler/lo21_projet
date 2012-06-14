@@ -2,9 +2,9 @@
 
 DataGestion::DataGestion() {
     // chargerContexte ?
-    //pileAffichage = new QStack<QString>(10);
-    //pileStockage = new QStack<Data>(10); // cette valeur ?
-    //pileRetablir = new QStack<Data>(10);
+    pileAffichage = new Pile<QString>();
+    pileStockage = new Pile<Data>();
+    pileRetablir = new Pile<Data>();
     factoryInstance = &Factory::getInstance();
 
 }
@@ -15,18 +15,27 @@ DataGestion::~DataGestion() {
 }
 
 void DataGestion::parse(QString expression) {
-    QStringList list = expression.split(" ");
-    foreach(QString s, list) {
-        //DataGestion::pileAffichage.push(s);
-        //DataGestion::pileStockage.push(DataGestion::factoryInstance->creer(s));
+    if(expression.contains("'")) {
+        Pile<Data> tmp;
+        QStringList list = expression.split("'");
+        foreach(QString s2, list) {
+            QStringList l = s2.split(" ");
+            foreach(QString s, s2) {
+                pileStockage->addPile(DataGestion::factoryInstance->creer(s));
+                tmp.addPile(DataGestion::factoryInstance->creer(s));
+            }
+        }
+        //res = calcul(tmp);
+        //pileStockage.addPile(res);
+        //pileAffichage.addPile(res.toString());
     }
-    /*test expression
-            couper en morceau séparé par des ' '
-            factory::creer sur chaque morceau
-            remplissage de stockage
-            appel à calcul
-            remplissage de stockage
-            remplissage de affichage*/
+    else {
+        QStringList list = expression.split(" ");
+        foreach(QString s, list) {
+            pileAffichage->addPile(&s);
+            pileStockage->addPile(DataGestion::factoryInstance->creer(s));
+        }
+    }
 }
 
 void DataGestion::calcul() {
@@ -47,10 +56,10 @@ void DataGestion::calcul() {
 
 DataGestion& DataGestion::clone() const {
     DataGestion* dg = new DataGestion();
-   /* dg->pileAffichage = this.pileAffichage.clone();
-    dg->pileRetablir = this.pileRetablir.clone();
-    dg->pileStockage = this.pileStockage.clone();
-    dg.calculStrategy = this.calculStrategy; // clone ?*/
+    //dg->pileAffichage = *this->pileAffichage.clone();
+    //dg->pileRetablir = *this->pileRetablir.clone();
+    //dg->pileStockage = *this->pileStockage.clone();
+   // dg.calculStrategy = this->calculStrategy;
 
     DataGestion& ref = *dg;
     return ref;

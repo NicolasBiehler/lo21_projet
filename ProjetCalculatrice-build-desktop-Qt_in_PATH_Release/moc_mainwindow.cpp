@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mainwindow.h'
 **
-** Created: Thu Jun 14 16:53:09 2012
+** Created: Thu Jun 14 19:12:10 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_MainWindow[] = {
        4,       // revision
        0,       // classname
        0,    0, // classinfo
-      41,   14, // methods
+      40,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -31,47 +31,46 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      12,   11,   11,   11, 0x0a,
-      26,   11,   11,   11, 0x0a,
-      40,   11,   11,   11, 0x0a,
-      54,   11,   11,   11, 0x0a,
-      68,   11,   11,   11, 0x0a,
-      82,   11,   11,   11, 0x0a,
-      96,   11,   11,   11, 0x0a,
-     110,   11,   11,   11, 0x0a,
-     124,   11,   11,   11, 0x0a,
-     138,   11,   11,   11, 0x0a,
-     152,   11,   11,   11, 0x0a,
-     165,   11,   11,   11, 0x0a,
-     179,   11,   11,   11, 0x0a,
-     192,   11,   11,   11, 0x0a,
-     206,   11,   11,   11, 0x0a,
-     219,   11,   11,   11, 0x0a,
-     233,   11,   11,   11, 0x0a,
-     245,   11,   11,   11, 0x0a,
-     258,   11,   11,   11, 0x0a,
-     271,   11,   11,   11, 0x0a,
-     285,   11,   11,   11, 0x0a,
-     299,   11,   11,   11, 0x0a,
-     312,   11,   11,   11, 0x0a,
-     325,   11,   11,   11, 0x0a,
-     338,   11,   11,   11, 0x0a,
-     352,   11,   11,   11, 0x0a,
-     366,   11,   11,   11, 0x0a,
-     379,   11,   11,   11, 0x0a,
-     394,   11,   11,   11, 0x0a,
-     408,   11,   11,   11, 0x0a,
-     421,   11,   11,   11, 0x0a,
-     436,   11,   11,   11, 0x0a,
-     451,   11,   11,   11, 0x0a,
-     468,   11,   11,   11, 0x0a,
-     482,   11,   11,   11, 0x0a,
-     498,   11,   11,   11, 0x0a,
-     513,   11,   11,   11, 0x0a,
-     534,   11,   11,   11, 0x0a,
-     556,   11,   11,   11, 0x0a,
-     571,   11,   11,   11, 0x0a,
-     586,   11,   11,   11, 0x0a,
+      12,   11,   11,   11, 0x08,
+      26,   11,   11,   11, 0x08,
+      40,   11,   11,   11, 0x08,
+      54,   11,   11,   11, 0x08,
+      68,   11,   11,   11, 0x08,
+      82,   11,   11,   11, 0x08,
+      96,   11,   11,   11, 0x08,
+     110,   11,   11,   11, 0x08,
+     124,   11,   11,   11, 0x08,
+     138,   11,   11,   11, 0x08,
+     152,   11,   11,   11, 0x08,
+     165,   11,   11,   11, 0x08,
+     179,   11,   11,   11, 0x08,
+     192,   11,   11,   11, 0x08,
+     206,   11,   11,   11, 0x08,
+     219,   11,   11,   11, 0x08,
+     233,   11,   11,   11, 0x08,
+     245,   11,   11,   11, 0x08,
+     258,   11,   11,   11, 0x08,
+     271,   11,   11,   11, 0x08,
+     285,   11,   11,   11, 0x08,
+     299,   11,   11,   11, 0x08,
+     312,   11,   11,   11, 0x08,
+     325,   11,   11,   11, 0x08,
+     338,   11,   11,   11, 0x08,
+     352,   11,   11,   11, 0x08,
+     366,   11,   11,   11, 0x08,
+     379,   11,   11,   11, 0x08,
+     394,   11,   11,   11, 0x08,
+     408,   11,   11,   11, 0x08,
+     421,   11,   11,   11, 0x08,
+     450,  436,   11,   11, 0x08,
+     472,   11,   11,   11, 0x08,
+     489,   11,   11,   11, 0x08,
+     503,   11,   11,   11, 0x08,
+     519,   11,   11,   11, 0x08,
+     534,   11,   11,   11, 0x08,
+     555,   11,   11,   11, 0x08,
+     583,  577,   11,   11, 0x08,
+     601,   11,   11,   11, 0x08,
 
        0        // eod
 };
@@ -87,12 +86,12 @@ static const char qt_meta_stringdata_MainWindow[] = {
     "CUBEPressed()\0INVPressed()\0POWPressed()\0"
     "MODPressed()\0SIGNPressed()\0FACTPressed()\0"
     "ADDPressed()\0MINUSPressed()\0MULTPressed()\0"
-    "DIVPressed()\0spacePressed()\0ratioClicked()\0"
-    "integerClicked()\0realClicked()\0"
-    "radianClicked()\0degreClicked()\0"
-    "trueComplexClicked()\0falseComplexClicked()\0"
-    "fermerOnglet()\0nouvelOnglet()\0"
-    "nouvelOngletbis()\0"
+    "DIVPressed()\0spacePressed()\0currentOnglet\0"
+    "ratioClicked(Onglet*)\0integerClicked()\0"
+    "realClicked()\0radianClicked()\0"
+    "degreClicked()\0trueComplexClicked()\0"
+    "falseComplexClicked()\0index\0"
+    "fermerOnglet(int)\0nouvelOnglet()\0"
 };
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -155,19 +154,18 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 28: MULTPressed(); break;
         case 29: DIVPressed(); break;
         case 30: spacePressed(); break;
-        case 31: ratioClicked(); break;
+        case 31: ratioClicked((*reinterpret_cast< Onglet*(*)>(_a[1]))); break;
         case 32: integerClicked(); break;
         case 33: realClicked(); break;
         case 34: radianClicked(); break;
         case 35: degreClicked(); break;
         case 36: trueComplexClicked(); break;
         case 37: falseComplexClicked(); break;
-        case 38: fermerOnglet(); break;
+        case 38: fermerOnglet((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 39: nouvelOnglet(); break;
-        case 40: nouvelOngletbis(); break;
         default: ;
         }
-        _id -= 41;
+        _id -= 40;
     }
     return _id;
 }

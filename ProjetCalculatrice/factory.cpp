@@ -17,8 +17,6 @@ void Factory::releaseInstance() {
     instance=0;
 }
 
-// les entrées sont découpés au niveau des ' ' et creer est appelée pour chaque élément
-// donc pas de calcul à gérer, un seul truc à la fois
 Data *Factory::creer(QString s) {
     Data * d;
     if(Nombre::Entier::isEntier(s)) {
@@ -31,7 +29,10 @@ Data *Factory::creer(QString s) {
         *d = ReelFactory::creer(s);
     }
     else if(Nombre::Complexe::isComplexe(s)) {
-        //*d = ComplexeFactory::creer(s);
+        *d = ComplexeFactory::creer(s);
+    }
+    else if(Nombre::Expression::isExpression(s)) {
+        *d = ExpressionFactory::creer(s);
     }
     else { // c'est un opérateur ou une mauvaise entrée
         //OperateurFactory::creer(s);
@@ -60,14 +61,20 @@ Rationnel& RationnelFactory::creer(QString s) {
     return ref;
 }
 
-//Complexe& ComplexeFactory::creer(QString s) {
-   /* QStringList list = s.split("$");
-    DataReelle *dr = (DataReelle) Factory::getInstance().creer(list[0]);
-    DataReelle *di = (DataReelle) Factory::getInstance().creer(list[1]);
+Complexe& ComplexeFactory::creer(QString s) {
+    QStringList list = s.split("$");
+    DataReelle *dr = dynamic_cast<DataReelle*>(Factory::getInstance().creer(list[0]));
+    DataReelle *di = dynamic_cast<DataReelle*>(Factory::getInstance().creer(list[1]));
     Complexe* res = new Complexe( *dr, *di);
     Complexe& ref = *res;
-    return ref;*/
-//}
+    return ref;
+}
+
+Expression& ExpressionFactory::creer(QString s) {
+    Expression *e= new Expression(s);
+    Expression& ref = *e;
+    return ref;
+}
 
 //Operateur& OperateurFactory::creer(QString s) {
     // classe operateur a faire

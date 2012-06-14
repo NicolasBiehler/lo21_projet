@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Jun 14 16:53:04 2012
+** Created: Thu Jun 14 19:08:27 2012
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -27,7 +27,6 @@
 #include <QtGui/QRadioButton>
 #include <QtGui/QSpinBox>
 #include <QtGui/QStatusBar>
-#include <QtGui/QTabWidget>
 #include <QtGui/QTextEdit>
 #include <QtGui/QWidget>
 
@@ -42,9 +41,6 @@ public:
     QAction *actionR_tablir;
     QAction *actionNouvel_Onglet;
     QWidget *centralWidget;
-    QTabWidget *tabWidget;
-    QWidget *Calc_1;
-    QWidget *Calc_2;
     QFrame *frame;
     QWidget *layoutWidget;
     QGridLayout *AffichageRes;
@@ -160,7 +156,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(840, 623);
+        MainWindow->resize(848, 622);
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -185,24 +181,12 @@ public:
         sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
         centralWidget->setSizePolicy(sizePolicy);
         centralWidget->setAcceptDrops(false);
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setEnabled(true);
-        tabWidget->setGeometry(QRect(0, 0, 841, 501));
-        tabWidget->setAutoFillBackground(false);
-        tabWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(235, 235, 235);"));
-        tabWidget->setIconSize(QSize(8, 8));
-        tabWidget->setDocumentMode(true);
-        tabWidget->setTabsClosable(true);
-        Calc_1 = new QWidget();
-        Calc_1->setObjectName(QString::fromUtf8("Calc_1"));
-        tabWidget->addTab(Calc_1, QString());
-        Calc_2 = new QWidget();
-        Calc_2->setObjectName(QString::fromUtf8("Calc_2"));
-        tabWidget->addTab(Calc_2, QString());
         frame = new QFrame(centralWidget);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(0, 20, 841, 561));
+        frame->setGeometry(QRect(0, 0, 850, 579));
+        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
+        frame->setSizePolicy(sizePolicy);
+        frame->setMinimumSize(QSize(850, 579));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         layoutWidget = new QWidget(frame);
@@ -400,7 +384,7 @@ public:
 
         layoutWidget1 = new QWidget(frame);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(500, 430, 299, 131));
+        layoutWidget1->setGeometry(QRect(500, 430, 297, 122));
         Parameters = new QGridLayout(layoutWidget1);
         Parameters->setSpacing(6);
         Parameters->setContentsMargins(11, 11, 11, 11);
@@ -489,7 +473,7 @@ public:
 
         layoutWidget2 = new QWidget(frame);
         layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(10, 330, 478, 238));
+        layoutWidget2->setGeometry(QRect(10, 330, 428, 214));
         Operators = new QGridLayout(layoutWidget2);
         Operators->setSpacing(6);
         Operators->setContentsMargins(11, 11, 11, 11);
@@ -664,7 +648,7 @@ public:
 
         layoutWidget3 = new QWidget(frame);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(10, 80, 421, 254));
+        layoutWidget3->setGeometry(QRect(10, 80, 421, 227));
         NumPad = new QGridLayout(layoutWidget3);
         NumPad->setSpacing(6);
         NumPad->setContentsMargins(11, 11, 11, 11);
@@ -800,7 +784,7 @@ public:
 
         horizontalLayoutWidget = new QWidget(frame);
         horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(90, 30, 304, 31));
+        horizontalLayoutWidget->setGeometry(QRect(90, 30, 254, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -829,7 +813,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 840, 23));
+        menuBar->setGeometry(QRect(0, 0, 848, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuHelp = new QMenu(menuBar);
@@ -854,9 +838,6 @@ public:
         QObject::connect(action_Quit, SIGNAL(triggered()), MainWindow, SLOT(close()));
         QObject::connect(deleteButton, SIGNAL(clicked()), inputLine, SLOT(clear()));
 
-        tabWidget->setCurrentIndex(0);
-
-
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
@@ -878,8 +859,6 @@ public:
         actionR_tablir->setShortcut(QApplication::translate("MainWindow", "Ctrl+Y", 0, QApplication::UnicodeUTF8));
         actionNouvel_Onglet->setText(QApplication::translate("MainWindow", "Nouvel Onglet", 0, QApplication::UnicodeUTF8));
         actionNouvel_Onglet->setShortcut(QApplication::translate("MainWindow", "Ctrl+T", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(Calc_1), QApplication::translate("MainWindow", "Calc 1", 0, QApplication::UnicodeUTF8));
-        tabWidget->setTabText(tabWidget->indexOf(Calc_2), QApplication::translate("MainWindow", "Calc 2", 0, QApplication::UnicodeUTF8));
         nbelement->setText(QApplication::translate("MainWindow", "Nombre d'\303\251l\303\251ments de la pile \303\240 afficher :", 0, QApplication::UnicodeUTF8));
         Affichage->setText(QApplication::translate("MainWindow", "Affichage", 0, QApplication::UnicodeUTF8));
         label_7->setText(QApplication::translate("MainWindow", "Binaires", 0, QApplication::UnicodeUTF8));

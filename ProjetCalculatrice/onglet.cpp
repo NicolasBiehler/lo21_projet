@@ -1,6 +1,11 @@
 #include "onglet.h"
 
-Onglet::Onglet()
+Onglet::Onglet() : QTabWidget()
 {
-    this->tab = new QTabWidget;
+    this->degre=true;
+    this->complexe=false;
+    this->type=Integer;
 }
+
+Onglet::~Onglet(){}
+

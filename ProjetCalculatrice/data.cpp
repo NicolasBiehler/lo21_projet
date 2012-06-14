@@ -50,7 +50,7 @@ Rationnel& Reel::toRationnel() const {
     str.setNum(Reel::valeur);
     QStringList list = str.split(".");
     int decimal = list.value(1).count();
-    Rationnel* res= new Rationnel(Reel::valeur*pow(10,decimal), pow(10,decimal));
+    Rationnel* res= new Rationnel(Reel::valeur*pow((double)10,decimal), pow((double)10,decimal));
     res->simplifier();
     Rationnel& ref=*res;
     return ref;
@@ -76,6 +76,12 @@ bool Nombre::Complexe::isComplexe(const QString& s){
     QRegExp regexp(COMPLEXE);
     return (s.contains(regexp));
 }
+
+bool Nombre::Expression::isExpression(const QString& s){
+    QRegExp regexp(EXPRESSION);
+    return (s.contains(regexp));
+}
+
 
 Entier Rationnel::pgcd(const Entier& a, const Entier& b) {
     Entier x(a.getValeur());

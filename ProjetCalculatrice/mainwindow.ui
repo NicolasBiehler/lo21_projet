@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>840</width>
-    <height>623</height>
+    <width>848</width>
+    <height>622</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -41,58 +41,26 @@
    <property name="acceptDrops">
     <bool>false</bool>
    </property>
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="enabled">
-     <bool>true</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>841</width>
-      <height>501</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(235, 235, 235);</string>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>8</width>
-      <height>8</height>
-     </size>
-    </property>
-    <property name="documentMode">
-     <bool>true</bool>
-    </property>
-    <property name="tabsClosable">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="Calc_1">
-     <attribute name="title">
-      <string>Calc 1</string>
-     </attribute>
-    </widget>
-    <widget class="QWidget" name="Calc_2">
-     <attribute name="title">
-      <string>Calc 2</string>
-     </attribute>
-    </widget>
-   </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>20</y>
-      <width>841</width>
-      <height>561</height>
+      <y>0</y>
+      <width>850</width>
+      <height>579</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>850</width>
+      <height>579</height>
+     </size>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -377,8 +345,8 @@
       <rect>
        <x>500</x>
        <y>430</y>
-       <width>299</width>
-       <height>131</height>
+       <width>297</width>
+       <height>122</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="Parameters">
@@ -579,8 +547,8 @@
       <rect>
        <x>10</x>
        <y>330</y>
-       <width>478</width>
-       <height>238</height>
+       <width>428</width>
+       <height>214</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="Operators">
@@ -898,7 +866,7 @@
        <x>10</x>
        <y>80</y>
        <width>421</width>
-       <height>254</height>
+       <height>227</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="NumPad">
@@ -1135,7 +1103,7 @@
       <rect>
        <x>90</x>
        <y>30</y>
-       <width>304</width>
+       <width>254</width>
        <height>31</height>
       </rect>
      </property>
@@ -1169,8 +1137,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>840</width>
-     <height>23</height>
+     <width>848</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
