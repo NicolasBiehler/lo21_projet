@@ -7,7 +7,9 @@ Onglet::Onglet() : QTabWidget()
     this->type=Integer;
 }
 
-Onglet::~Onglet(){}
+Onglet::~Onglet(){
+    delete gestion;
+}
 
 std::string Onglet::saveContexte() const {
     std::stringstream s;

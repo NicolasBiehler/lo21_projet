@@ -29,6 +29,10 @@ public:
     bool getComplexe()const {return complexe;}
     bool getDegre()const {return degre;}
     Constante getType()const{return type;}
+    void setDataGestion(DataGestion& g) {
+        delete gestion;
+        gestion=&g;
+    }
     //void ajouterStockage(const DataGestion x){ gestion->getStockage().addPile(x);}
     void viderStockage(){gestion->getStockage().CLEAR();}
     int tailleStockage(){return gestion->getStockage().count();}

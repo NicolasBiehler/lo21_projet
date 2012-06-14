@@ -23,6 +23,18 @@ public:
     Pile<Data>& getStockage() const {return *pileStockage;}
     Pile<Data>& getRetablir() const {return *pileRetablir;}
     Pile<QString>& getAffichage() const {return *pileAffichage;}
+    void setStockage(Pile<Data>& p) {
+        delete pileStockage;
+        pileStockage = &p;
+    }
+    void setRetablir(Pile<Data>& p) {
+        delete pileRetablir;
+        pileRetablir = &p;
+    }
+    void setAffichage(Pile<QString>& p) {
+        delete pileAffichage;
+        pileAffichage = &p;
+    }
     Factory& getFactory() const {return *factoryInstance;}
     void parse(QString expression); // update pileaffichage + pileretablir
     void calcul(); // appelle différente fonction suivant le contenu --> strategy

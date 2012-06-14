@@ -5,6 +5,10 @@
 #include "onglet.h"
 #include <fstream>
 #include "calculexception.h"
+#include "pile.h"
+#include <QtXml/QDomDocument>
+#include <QFile>
+#include "data.h"
 
 class Collection_Onglet : public QVector<Onglet *>
 {
@@ -12,7 +16,10 @@ private :
     int actif;
     static Collection_Onglet * instance;
     Collection_Onglet(){}
-    ~Collection_Onglet(){}
+    ~Collection_Onglet(){
+        saveContexte();
+        delete instance;
+     }
     void operator=(const Collection_Onglet&);
 public:
     void SetActif(const int x) {actif=x;}
