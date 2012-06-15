@@ -19,12 +19,15 @@ class Plus : public OperateurStrategy {
 public:
     Data& calcul(Pile<Data> *p);
 //private:
-    Complexe& plusComplexe(const Complexe *a, const Complexe *b);
+    Complexe& plusComplexe(const Complexe &a, const Complexe &b);
     Rationnel& plusRationnel(const Rationnel& r1, const Rationnel& r2);
 };
 
 class Moins : public OperateurStrategy {
-    //Data calcul(Pile<Data>& p);
+public:
+    Data& calcul(Pile<Data> *p);
+    Complexe& moinsComplexe(const Complexe &a, const Complexe &b);
+    Rationnel& moinsRationnel(const Rationnel& r1, const Rationnel& r2);
 };
 
 class Div : public OperateurStrategy {

@@ -2,7 +2,7 @@
 #define PILE_H
 
 #include <QStack>
-#include "data.h"
+#include <data.h>
 
 template <typename T>
 class Pile : public QStack<T*>{

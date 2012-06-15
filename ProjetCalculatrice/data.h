@@ -56,7 +56,7 @@ public:
     Rationnel& toRationnel() const;
     static bool isEntier(const QString& s);
     QString& toString() const {
-        QString* s = new QString("" + valeur);
+        QString* s = new QString(QString::number(valeur));
         QString& ref = *s;
         return ref;
     }
@@ -107,9 +107,9 @@ public:
     Reel& toReel() const;
     Entier pgcd(const Entier& a, const Entier& b);
     QString& toString() const {
-        QString s1 = numerateur->toString();
-        QString s2 = denominateur->toString();
-        QString* s = new QString(s1 + " / " + s2);
+        QString& s1 = numerateur->toString();
+        QString& s2 = denominateur->toString();
+        QString* s = &s1.append(" / ").append(&s2);
         QString& ref = *s;
         return ref;
     }
@@ -135,8 +135,8 @@ public:
     Entier& toEntier() const;
     Rationnel& toRationnel() const;
     QString& toString() const {
-        QString s = QString::number(valeur);
-        QString& ref = s;
+        QString* s = new QString(QString::number(valeur));
+        QString& ref = *s;
         return ref;
     }
     Reel& clone() const {

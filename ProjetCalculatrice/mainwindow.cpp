@@ -70,15 +70,15 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->evalButton,SIGNAL(clicked()),this,SLOT(evalPressed()));
     QObject::connect(ui->action_Quit,SIGNAL(triggered()),this,SLOT(Quitter()));
 
-    Operation::Plus *essai;
+    Operation::Moins *essai;
     Pile<Data> *mapile = new Pile<Data>();
     Entier *e1 = new Entier(4);
-    Rationnel *r2 = new Rationnel(4,2);
+    Rationnel *e2 = new Rationnel(1,56);
     mapile->addPile(e1);
-    mapile->addPile(r2);
+    mapile->addPile(e2);
     Data& resultat = essai->calcul(mapile);
     Rationnel& r3 = dynamic_cast<Rationnel&>(resultat);
-    ui->textEdit->setText(QString::number(r3.getNumerateur().getValeur()).append("/").append(QString::number(r3.getDenominateur().getValeur())));
+    ui->textEdit->setText(r3.toEntier().toString());
 }
 
 MainWindow::~MainWindow()

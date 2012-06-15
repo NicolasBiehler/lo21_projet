@@ -33,7 +33,7 @@ Entier& Rationnel::toEntier() const {
 }
 
 Reel& Rationnel::toReel() const {
-    double r = Rationnel::numerateur->getValeur() / Rationnel::denominateur->getValeur();
+    double r = (double) Rationnel::numerateur->getValeur() / Rationnel::denominateur->getValeur();
     Reel* res = new Reel(r);
     Reel& ref = *res;
     return ref;
