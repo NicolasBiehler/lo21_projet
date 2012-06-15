@@ -38,29 +38,61 @@ Pile<T>& Pile<T>::clone(){
 }
 
 template<typename T>
-T * SUM(const unsigned int x) const {
-    if(x==O || x>*this.size()) {
+T& Pile<T>::SUM(const unsigned int x) const{
+    if(x==0 || x>this->size()) {
         throw CalculException("SUM impossible, mauvais x");
     }
-    if(Nombre::Operateur::isOperateur()) {
-
+    Pile<T>& p = this->pileResultat();
+    Operation::Plus * plus = new Operation::Plus();
+    T* res;
+    int i =0;
+    while(i<x) {
+        res = plus->calcul(p);
+        i++;
+        i++;
+        p.addPile(res);
     }
+    delete p;
+    delete plus;
+    T& ref = *res;
+    return ref;
 }
 
 template<typename T>
-T * MEAN(const unsigned int x) const {
-    if(x==O || x>*this.size()) {
-        throw CalculException("SUM impossible, mauvais x");
-    }
+T& Pile<T>::MEAN(const unsigned int x) const{
+    T& tmp = this->SUM(x);
+    Operation::Div * div = new Operation::Div();
+    Pile<T> pileTmp;
+    pileTmp.addPile(tmp);
+    pileTmp.addPile(new Nombre::Entier(x));
+    T* res = div->calcul(pileTmp);
+    delete div;
+    delete pileTmp;
+    T& ref = *res;
+    return ref;
 }
 
 template<typename T>
-pile<T> pileResultat() const {
-    pile<T> p = *this.clone();
+Pile<T>& Pile<T>::pileResultat() const{
+    Pile<T> p = this->clone();
+    Pile<T> res;
     for(int i=0;i<p.size();i++) {
-        if(p.at(i).isOperateur()) { // RIEN NE MARCHE
-            p.DROP();
+        if(p.at(i).isOperateur()) {
+            if(p.at(i).isBinaire()) {
+                p.DROP();
+                p.DROP();
+                p.DROP();
+            }
+            else { // unaire
+                p.DROP();
+                p.DROP();
+            }
+        }
+        else {
+            res.addPile(p.pop());
         }
     }
-    return p;
+    delete p;
+    Pile<T>& ref = res;
+    return ref;
 }

@@ -25,6 +25,9 @@ void DataGestion::parse(QString expression) {
                 pileStockage->addPile(DataGestion::factoryInstance->creer(s));
                 tmp.addPile(DataGestion::factoryInstance->creer(s));
             }
+            //Nombre::Data& res = calculStrategy->calcul(tmp);
+            //pileStockage->addPile(&res);
+            //pileAffichage->addPile(&res.toString());
         }
     }
     else {
@@ -89,7 +92,7 @@ void DataGestion::calcul() {
         default:
             throw CalculException("Operateur non reconnu, videz la pile svp");
         }
-        calculStrategy->calcul(pileStockage);
+        //calculStrategy->calcul(pileStockage);
     }
     // sinon, rien a faire, rien a calculer
 }

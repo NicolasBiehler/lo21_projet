@@ -107,7 +107,9 @@ public:
     Reel& toReel() const;
     Entier pgcd(const Entier& a, const Entier& b);
     QString& toString() const {
-        QString* s = new QString(numerateur->toString() + " / " + denominateur->toString());
+        QString s1 = numerateur->toString();
+        QString s2 = denominateur->toString();
+        QString* s = new QString(s1 + " / " + s2);
         QString& ref = *s;
         return ref;
     }
@@ -172,7 +174,9 @@ public:
     }
     static bool isComplexe(const QString& s);
     QString& toString() const {
-        QString* s = new QString(partie_reelle->toString() + " $ " + partie_imaginaire->toString());
+        QString s1 = partie_reelle->toString();
+        QString s2 = partie_imaginaire->toString();
+        QString* s = new QString(s1 + " $ " + s2);
         QString& ref = *s;
         return ref;
     }
