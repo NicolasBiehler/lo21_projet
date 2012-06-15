@@ -1,18 +1,18 @@
 #include "datagestion.h"
 
 DataGestion::DataGestion() {
-    // chargerContexte ?
     pileAffichage = new Pile<QString>();
     pileStockage = new Pile<Data>();
     pileRetablir = new Pile<Data>();
     factoryInstance = &Factory::getInstance();
     calculStrategy = 0;
-
 }
 
 DataGestion::~DataGestion() {
-
-    // TODO
+    delete pileAffichage;
+    delete pileStockage;
+    delete pileRetablir;
+    delete calculStrategy;
 }
 
 void DataGestion::parse(QString expression) {
@@ -26,9 +26,6 @@ void DataGestion::parse(QString expression) {
                 tmp.addPile(DataGestion::factoryInstance->creer(s));
             }
         }
-        //res = calcul(tmp);
-        //pileStockage.addPile(res);
-        //pileAffichage.addPile(res.toString());
     }
     else {
         QStringList list = expression.split(" ");
@@ -37,6 +34,7 @@ void DataGestion::parse(QString expression) {
             pileStockage->addPile(DataGestion::factoryInstance->creer(s));
         }
     }
+    calcul();
 }
 
 void DataGestion::calcul() {
@@ -91,17 +89,17 @@ void DataGestion::calcul() {
         default:
             throw CalculException("Operateur non reconnu, videz la pile svp");
         }
-       // calculStrategy->calcul(pileStockage);
+        calculStrategy->calcul(pileStockage);
     }
     // sinon, rien a faire, rien a calculer
 }
 
 DataGestion& DataGestion::clone() const {
     DataGestion* dg = new DataGestion();
-    //dg->pileAffichage = *this->pileAffichage.clone();
-    //dg->pileRetablir = *this->pileRetablir.clone();
-    //dg->pileStockage = *this->pileStockage.clone();
-   // dg.calculStrategy = this->calculStrategy;
+    dg->setAffichage(this->pileAffichage->clone());
+    dg->setRetablir(this->pileRetablir->clone());
+    dg->setStockage(this->pileStockage->clone());
+    dg->calculStrategy = new Operation::OperateurStrategy();
 
     DataGestion& ref = *dg;
     return ref;

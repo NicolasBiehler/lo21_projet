@@ -28,7 +28,7 @@ void Pile<T>::DUP() const{
 }
 
 template<typename T>
-Pile<T*>& Pile<T>::clone(){
+Pile<T>& Pile<T>::clone(){
     Pile *copy = new Pile();
     for(unsigned int i = 0 ; i < this->size() ; ++i){
         T *temp = *this->value(i)->clone();

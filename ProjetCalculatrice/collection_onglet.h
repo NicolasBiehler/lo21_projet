@@ -18,6 +18,7 @@ private :
     Collection_Onglet(){}
     ~Collection_Onglet(){
         saveContexte();
+        instance->at(0)->getDataGestion().getFactory().releaseInstance();
         delete instance;
      }
     void operator=(const Collection_Onglet&);

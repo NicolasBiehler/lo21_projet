@@ -28,6 +28,7 @@ public:
     void setType(const Constante val){this->type=val;}
     bool getComplexe()const {return complexe;}
     bool getDegre()const {return degre;}
+    DataGestion& getDataGestion() const{return *gestion;}
     Constante getType()const{return type;}
     void setDataGestion(DataGestion& g) {
         delete gestion;
