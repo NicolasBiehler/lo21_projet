@@ -34,7 +34,7 @@ Data *Factory::creer(QString s) {
     else if(Nombre::Expression::isExpression(s)) {
         *d = ExpressionFactory::creer(s);
     }
-    else { // c'est un opÃ©rateur ou une mauvaise entrÃ©e
+    else { // c'est un opérateur ou une mauvaise entrée
         OperateurFactory::creer(s);
     }
     return d;

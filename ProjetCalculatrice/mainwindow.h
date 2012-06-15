@@ -70,6 +70,7 @@ private slots:
     void changerOnglet(int index);
     void refreshUI(int index);
     void evalPressed();
+    void Quitter();
 
 private:
     Ui::MainWindow *ui;

@@ -16,17 +16,13 @@ private :
     int actif;
     static Collection_Onglet * instance;
     Collection_Onglet(){}
-    ~Collection_Onglet(){
-        saveContexte();
-        instance->at(0)->getDataGestion().getFactory().releaseInstance();
-        delete instance;
-     }
+    ~Collection_Onglet();
     void operator=(const Collection_Onglet&);
 public:
     void SetActif(const int x) {actif=x;}
     int GetActif() const {return actif;}
     static Collection_Onglet& GetInstance();
-    static void LibereInstance();
+    static void ReleaseInstance();
     void ajouterOnglet(Onglet * monOnglet);
     int taille(){return this->count();}
     void supprimerOnglet(int index);

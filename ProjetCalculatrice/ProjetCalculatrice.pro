@@ -16,21 +16,21 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     data.cpp \
+    operateur.cpp \
+    pile.cpp \
     datagestion.cpp \
     calculexception.cpp \
     factory.cpp \
-    pile.cpp \
-    operateur.cpp \
     onglet.cpp \
     collection_onglet.cpp
 
 HEADERS  += mainwindow.h \
     data.h \
+    operateur.h \
+    pile.h \
     datagestion.h \
     calculexception.h \
     factory.h \
-    pile.h \
-    operateur.h \
     onglet.h \
     collection_onglet.h
 

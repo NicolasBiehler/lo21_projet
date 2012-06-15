@@ -269,9 +269,6 @@
         <property name="text">
          <string>DUP</string>
         </property>
-        <property name="shortcut">
-         <string>D</string>
-        </property>
        </widget>
       </item>
       <item row="13" column="3" colspan="3">
@@ -581,7 +578,7 @@
          <string>DIV</string>
         </property>
         <property name="shortcut">
-         <string>/</string>
+         <string>D</string>
         </property>
        </widget>
       </item>
@@ -899,7 +896,7 @@
          <string>/</string>
         </property>
         <property name="shortcut">
-         <string>I</string>
+         <string>/</string>
         </property>
        </widget>
       </item>
@@ -1213,22 +1210,6 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections>
-  <connection>
-   <sender>action_Quit</sender>
-   <signal>triggered()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>275</x>
-     <y>199</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>deleteButton</sender>
    <signal>clicked()</signal>

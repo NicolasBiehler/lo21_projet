@@ -37,7 +37,7 @@ public:
     }
     Factory& getFactory() const {return *factoryInstance;}
     void parse(QString expression); // update pileaffichage + pileretablir
-    void calcul(); // appelle diffÃ©rente fonction suivant le contenu --> strategy
+    void calcul(); // appelle différente fonction suivant le contenu --> strategy
     void annuler();
     void retablir();
     DataGestion& clone() const;

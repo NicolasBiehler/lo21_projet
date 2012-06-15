@@ -48,7 +48,7 @@ void DataGestion::calcul() {
         if(op==-1)
             throw CalculException("Operateur non reconnu, videz la pile svp");
 
-        switch(op) {
+     /*   switch(op) {
         case 0:
             calculStrategy = new Operation::Plus();
         case 1:
@@ -91,7 +91,7 @@ void DataGestion::calcul() {
             calculStrategy = new Operation::Fact();
         default:
             throw CalculException("Operateur non reconnu, videz la pile svp");
-        }
+        }*/
         //calculStrategy->calcul(pileStockage);
     }
     // sinon, rien a faire, rien a calculer
@@ -99,10 +99,10 @@ void DataGestion::calcul() {
 
 DataGestion& DataGestion::clone() const {
     DataGestion* dg = new DataGestion();
-    dg->setAffichage(this->pileAffichage->clone());
-    dg->setRetablir(this->pileRetablir->clone());
-    dg->setStockage(this->pileStockage->clone());
-    dg->calculStrategy = new Operation::OperateurStrategy();
+    //dg->setAffichage(this->pileAffichage->clone());
+   // dg->setRetablir(this->pileRetablir->clone());
+   // dg->setStockage(this->pileStockage->clone());
+    dg->calculStrategy = 0;
 
     DataGestion& ref = *dg;
     return ref;

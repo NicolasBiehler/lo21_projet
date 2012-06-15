@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Jun 15 13:20:46 2012
+** Created: Fri Jun 15 17:04:58 2012
 **      by: Qt User Interface Compiler version 4.6.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -835,7 +835,6 @@ public:
         menuEdition->addAction(actionR_tablir);
 
         retranslateUi(MainWindow);
-        QObject::connect(action_Quit, SIGNAL(triggered()), MainWindow, SLOT(close()));
         QObject::connect(deleteButton, SIGNAL(clicked()), inputLine, SLOT(clear()));
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -870,7 +869,6 @@ public:
         clearButton->setText(QApplication::translate("MainWindow", "CLEAR", 0, QApplication::UnicodeUTF8));
         clearButton->setShortcut(QApplication::translate("MainWindow", "Del", 0, QApplication::UnicodeUTF8));
         dupButton->setText(QApplication::translate("MainWindow", "DUP", 0, QApplication::UnicodeUTF8));
-        dupButton->setShortcut(QApplication::translate("MainWindow", "D", 0, QApplication::UnicodeUTF8));
         dropButton->setText(QApplication::translate("MainWindow", "DROP", 0, QApplication::UnicodeUTF8));
         dropButton->setShortcut(QApplication::translate("MainWindow", "Shift+D", 0, QApplication::UnicodeUTF8));
         label_12->setText(QApplication::translate("MainWindow", "y :", 0, QApplication::UnicodeUTF8));
@@ -893,7 +891,7 @@ public:
         multiplyButton->setText(QApplication::translate("MainWindow", "*", 0, QApplication::UnicodeUTF8));
         multiplyButton->setShortcut(QApplication::translate("MainWindow", "*", 0, QApplication::UnicodeUTF8));
         divButton->setText(QApplication::translate("MainWindow", "DIV", 0, QApplication::UnicodeUTF8));
-        divButton->setShortcut(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));
+        divButton->setShortcut(QApplication::translate("MainWindow", "D", 0, QApplication::UnicodeUTF8));
         addButton->setText(QApplication::translate("MainWindow", "+", 0, QApplication::UnicodeUTF8));
         addButton->setShortcut(QApplication::translate("MainWindow", "+", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "Op\303\251rateurs", 0, QApplication::UnicodeUTF8));
@@ -936,7 +934,7 @@ public:
         dollarButton->setText(QApplication::translate("MainWindow", "$", 0, QApplication::UnicodeUTF8));
         dollarButton->setShortcut(QApplication::translate("MainWindow", "$", 0, QApplication::UnicodeUTF8));
         slashButton->setText(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));
-        slashButton->setShortcut(QApplication::translate("MainWindow", "I", 0, QApplication::UnicodeUTF8));
+        slashButton->setShortcut(QApplication::translate("MainWindow", "/", 0, QApplication::UnicodeUTF8));
         num7->setText(QApplication::translate("MainWindow", "7", 0, QApplication::UnicodeUTF8));
         num7->setShortcut(QApplication::translate("MainWindow", "7", 0, QApplication::UnicodeUTF8));
         num8->setText(QApplication::translate("MainWindow", "8", 0, QApplication::UnicodeUTF8));

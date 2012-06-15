@@ -8,7 +8,7 @@ void Rationnel::simplifier() {
     const Reel* den = new Reel(Rationnel::denominateur->getValeur() / vpgcd.getValeur());
 
     if(num==0 || den==0)
-        throw CalculException("Simplification a Ã©chouÃ©e");
+        throw CalculException("Simplification a échouée");
 
     Rationnel::numerateur = &num->toEntier();
     Rationnel::denominateur = &den->toEntier();

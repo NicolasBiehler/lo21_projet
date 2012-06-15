@@ -1,21 +1,26 @@
 #ifndef OPERATEUR_H
 #define OPERATEUR_H
 
-//#include <typeinfo>
+#include <typeinfo>
 #include "data.h"
 #include "pile.h"
+#include "calculexception.h"
 
 using namespace Nombre;
 
 namespace Operation {
 
-class OperateurStrategy {
+class OperateurStrategy{
 public:
-    //virtual Data calcul(Pile<Data>& p)=0;
+    virtual Data& calcul(Pile<Data>& p)=0;
 };
 
 class Plus : public OperateurStrategy {
-    //Data calcul(Pile<Data>& p);
+public:
+    Data& calcul(Pile<Data> *p);
+//private:
+    Complexe& plusComplexe(const Complexe *a, const Complexe *b);
+    Rationnel& plusRationnel(const Rationnel& r1, const Rationnel& r2);
 };
 
 class Moins : public OperateurStrategy {
@@ -27,7 +32,8 @@ class Div : public OperateurStrategy {
 };
 
 class Mult : public OperateurStrategy {
-    //Data calcul(Pile<Data>& p);
+public:
+    Data& calcul(Pile<Data> *p);
 };
 
 class Pow : public OperateurStrategy {

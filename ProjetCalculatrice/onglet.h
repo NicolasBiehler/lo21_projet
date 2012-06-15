@@ -37,7 +37,7 @@ public:
     //void ajouterStockage(const DataGestion x){ gestion->getStockage().addPile(x);}
     void viderStockage(){gestion->getStockage().CLEAR();}
     int tailleStockage(){return gestion->getStockage().count();}
-    std::string saveContexte() const;
+    std::string sauverContexte() const;
 };
 
 

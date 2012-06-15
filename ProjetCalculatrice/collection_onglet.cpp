@@ -9,7 +9,7 @@ Collection_Onglet& Collection_Onglet::GetInstance()
     return *instance;
 }
 
-void Collection_Onglet::LibereInstance()
+void Collection_Onglet::ReleaseInstance()
 {
     if (instance != 0)
         delete instance;
@@ -25,7 +25,7 @@ void Collection_Onglet::supprimerOnglet(int index){
 }
 
 void Collection_Onglet::saveContexte() {
-    std::ofstream fsave("./save.dat");
+    std::ofstream fsave("save.dat");
     if(!fsave) {
         throw CalculException("Ouverture fichier impossible, sauvegarde non assuree");
     }
@@ -34,16 +34,16 @@ void Collection_Onglet::saveContexte() {
     for(int i=0; i<Collection_Onglet::GetInstance().size(); ++i) {
         o = Collection_Onglet::GetInstance().at(i);
         fsave << "<onglet>";
-        fsave << o->saveContexte();
+        fsave << o->sauverContexte();
         fsave << "</onglet>";
     }
+
     fsave << "</root>";
-    delete o;
     fsave.close();
 }
 
 void Collection_Onglet::chargerContexte() {
-    QString file = "./save.dat";
+    QString file = "save.dat";
     QFile fread(file);
     fread.open(QFile::ReadOnly | QFile::Text);
 
@@ -135,3 +135,8 @@ void Collection_Onglet::chargerContexte() {
     }
     fread.close();
 }
+
+Collection_Onglet::~Collection_Onglet(){
+    instance->at(0)->getDataGestion().getFactory().releaseInstance();
+    saveContexte();
+ }

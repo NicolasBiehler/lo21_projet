@@ -96,3 +96,4 @@ Pile<T>& Pile<T>::pileResultat() const{
     Pile<T>& ref = res;
     return ref;
 }
+

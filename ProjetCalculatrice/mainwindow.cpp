@@ -21,14 +21,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     nouvelOnglet();
 
-  /*  int i=2, a=3;
-    onglet1->ajouterStockage(i);
-    onglet1->ajouterStockage(a);
-    onglet1->viderStockage();
-    onglet1->ajouterStockage(i);*/
-    //ui->textEdit->setText(QString::number(onglet1->tailleStockage()));
-
-
     //mesonglets->setBackgroundRole(QPalette::Background);
     QObject::connect(ui->num0,SIGNAL(clicked()),this,SLOT(num0Pressed()));
     QObject::connect(ui->num1,SIGNAL(clicked()),this,SLOT(num1Pressed()));
@@ -76,8 +68,17 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->quoteButton,SIGNAL(clicked()),this,SLOT(quotePressed()));
     QObject::connect(mesonglets,SIGNAL(currentChanged(int)),this,SLOT(changerOnglet(int)));
     QObject::connect(ui->evalButton,SIGNAL(clicked()),this,SLOT(evalPressed()));
+    QObject::connect(ui->action_Quit,SIGNAL(triggered()),this,SLOT(Quitter()));
 
-
+    Operation::Plus *essai;
+    Pile<Data> *mapile = new Pile<Data>();
+    Entier *e1 = new Entier(4);
+    Rationnel *r2 = new Rationnel(4,2);
+    mapile->addPile(e1);
+    mapile->addPile(r2);
+    Data& resultat = essai->calcul(mapile);
+    Rationnel& r3 = dynamic_cast<Rationnel&>(resultat);
+    ui->textEdit->setText(QString::number(r3.getNumerateur().getValeur()).append("/").append(QString::number(r3.getDenominateur().getValeur())));
 }
 
 MainWindow::~MainWindow()
@@ -318,4 +319,8 @@ void MainWindow::refreshUI(int index){
         ui->integerButton->setChecked(0);
         break;
     }
+}
+void MainWindow::Quitter(){
+    Collection_Onglet::ReleaseInstance();
+    this->close();
 }
