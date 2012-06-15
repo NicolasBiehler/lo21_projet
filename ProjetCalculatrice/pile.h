@@ -19,6 +19,7 @@ public:
     Pile<T*>& clone();           // Renvoie une reference vers une copie de la pile
     void addPile(T* x) {this->push(x);}  //Ajoute un element dans la pile
     int taille() {return this->size();}
+    Pile<T> pileResultat() const; // retourne les resultats seulement
 };
 
 

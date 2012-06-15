@@ -36,3 +36,31 @@ Pile<T>& Pile<T>::clone(){
     }
     return &copy;
 }
+
+template<typename T>
+T * SUM(const unsigned int x) const {
+    if(x==O || x>*this.size()) {
+        throw CalculException("SUM impossible, mauvais x");
+    }
+    if(Nombre::Operateur::isOperateur()) {
+
+    }
+}
+
+template<typename T>
+T * MEAN(const unsigned int x) const {
+    if(x==O || x>*this.size()) {
+        throw CalculException("SUM impossible, mauvais x");
+    }
+}
+
+template<typename T>
+pile<T> pileResultat() const {
+    pile<T> p = *this.clone();
+    for(int i=0;i<p.size();i++) {
+        if(p.at(i).isOperateur()) { // RIEN NE MARCHE
+            p.DROP();
+        }
+    }
+    return p;
+}
