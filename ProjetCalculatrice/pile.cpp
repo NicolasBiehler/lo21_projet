@@ -32,7 +32,7 @@ Pile<T>& Pile<T>::clone(){
     Pile *copy = new Pile();
     for(unsigned int i = 0 ; i < this->size() ; ++i){
         T *temp = *this->value(i)->clone();
-        copy->push(temp);
+        copy->push(*temp);
     }
     return &copy;
 }
