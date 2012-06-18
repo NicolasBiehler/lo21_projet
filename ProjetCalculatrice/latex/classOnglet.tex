@@ -1,0 +1,144 @@
+\hypertarget{classOnglet}{
+\section{Onglet Class Reference}
+\label{classOnglet}\index{Onglet@{Onglet}}
+}
+
+
+classe représentant un onglet de la calculatrice  
+
+
+
+
+{\ttfamily \#include $<$onglet.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classOnglet_ad0388b0a300edfeab063166f4fa44e25}{Onglet} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classOnglet_a717d9bd0139081b4e779f552c835b0f5}{$\sim$Onglet} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \item\end{DoxyCompactList}\item 
+void \hyperlink{classOnglet_ab1cadfd837be3e849bca41691cb0b856}{setComplexe} (const bool val)
+\begin{DoxyCompactList}\small\item\em change la valeur du booléen complexe \item\end{DoxyCompactList}\item 
+void \hyperlink{classOnglet_a534eb5c74e28ccd52c97f5ee69cb7d93}{setDegre} (const bool val)
+\begin{DoxyCompactList}\small\item\em change la valeur du booléen degré \item\end{DoxyCompactList}\item 
+void \hyperlink{classOnglet_aefe162f23f7d169c8a46daa08dfc0ccb}{setType} (const Constante val)
+\begin{DoxyCompactList}\small\item\em change la valeur du type \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_a2a57b8bf73cef860d8f41bafcfd10d4d}{
+bool \hyperlink{classOnglet_a2a57b8bf73cef860d8f41bafcfd10d4d}{getComplexe} () const }
+\label{classOnglet_a2a57b8bf73cef860d8f41bafcfd10d4d}
+
+\begin{DoxyCompactList}\small\item\em retourne le booléen complexe \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_a9ca61cf6944c13a33dcb4f791309d335}{
+bool \hyperlink{classOnglet_a9ca61cf6944c13a33dcb4f791309d335}{getDegre} () const }
+\label{classOnglet_a9ca61cf6944c13a33dcb4f791309d335}
+
+\begin{DoxyCompactList}\small\item\em retourne le booléen degré \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_a2d77df58fdd09290ff544fcc70ae1e21}{
+\hyperlink{classDataGestion}{DataGestion} \& \hyperlink{classOnglet_a2d77df58fdd09290ff544fcc70ae1e21}{getDataGestion} () const }
+\label{classOnglet_a2d77df58fdd09290ff544fcc70ae1e21}
+
+\begin{DoxyCompactList}\small\item\em retourne l'instance de datagestion \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_aa2ab00ac83fbf00f1cdbad816ff90fab}{
+Constante \hyperlink{classOnglet_aa2ab00ac83fbf00f1cdbad816ff90fab}{getType} () const }
+\label{classOnglet_aa2ab00ac83fbf00f1cdbad816ff90fab}
+
+\begin{DoxyCompactList}\small\item\em retourne le type paramétré \item\end{DoxyCompactList}\item 
+void \hyperlink{classOnglet_a37c3fd19396bff952d901a1e5b0f05e8}{setDataGestion} (\hyperlink{classDataGestion}{DataGestion} \&g)
+\begin{DoxyCompactList}\small\item\em donne une nouvelle \hyperlink{classDataGestion}{DataGestion} \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_ac2d6c75d662b7c663e684711f59687ef}{
+void \hyperlink{classOnglet_ac2d6c75d662b7c663e684711f59687ef}{viderStockage} ()}
+\label{classOnglet_ac2d6c75d662b7c663e684711f59687ef}
+
+\begin{DoxyCompactList}\small\item\em vide la pile de stockage \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_aa7811fa3572fac722be99b38ba3c3500}{
+int \hyperlink{classOnglet_aa7811fa3572fac722be99b38ba3c3500}{tailleStockage} ()}
+\label{classOnglet_aa7811fa3572fac722be99b38ba3c3500}
+
+\begin{DoxyCompactList}\small\item\em retourne la taille de la pile de stockage \item\end{DoxyCompactList}\item 
+\hypertarget{classOnglet_a076527a42ad44fd9fc1d9e0fe0e846e0}{
+std::string \hyperlink{classOnglet_a076527a42ad44fd9fc1d9e0fe0e846e0}{sauverContexte} () const }
+\label{classOnglet_a076527a42ad44fd9fc1d9e0fe0e846e0}
+
+\begin{DoxyCompactList}\small\item\em sauve le contexte des piles et des booléens de l'onglet \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe représentant un onglet de la calculatrice 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classOnglet_ad0388b0a300edfeab063166f4fa44e25}{
+\index{Onglet@{Onglet}!Onglet@{Onglet}}
+\index{Onglet@{Onglet}!Onglet@{Onglet}}
+\subsubsection[{Onglet}]{\setlength{\rightskip}{0pt plus 5cm}Onglet::Onglet ()}}
+\label{classOnglet_ad0388b0a300edfeab063166f4fa44e25}
+
+
+Constructeur. 
+
+Constructeur de la classe \hypertarget{classOnglet_a717d9bd0139081b4e779f552c835b0f5}{
+\index{Onglet@{Onglet}!$\sim$Onglet@{$\sim$Onglet}}
+\index{$\sim$Onglet@{$\sim$Onglet}!Onglet@{Onglet}}
+\subsubsection[{$\sim$Onglet}]{\setlength{\rightskip}{0pt plus 5cm}Onglet::$\sim$Onglet ()}}
+\label{classOnglet_a717d9bd0139081b4e779f552c835b0f5}
+
+
+Destructeur. 
+
+Destructeur de la classe 
+
+\subsection{Member Function Documentation}
+\hypertarget{classOnglet_ab1cadfd837be3e849bca41691cb0b856}{
+\index{Onglet@{Onglet}!setComplexe@{setComplexe}}
+\index{setComplexe@{setComplexe}!Onglet@{Onglet}}
+\subsubsection[{setComplexe}]{\setlength{\rightskip}{0pt plus 5cm}void Onglet::setComplexe (const bool {\em val})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classOnglet_ab1cadfd837be3e849bca41691cb0b856}
+
+
+change la valeur du booléen complexe 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]: nouvelle valeur du booléen \end{DoxyParams}
+\hypertarget{classOnglet_a37c3fd19396bff952d901a1e5b0f05e8}{
+\index{Onglet@{Onglet}!setDataGestion@{setDataGestion}}
+\index{setDataGestion@{setDataGestion}!Onglet@{Onglet}}
+\subsubsection[{setDataGestion}]{\setlength{\rightskip}{0pt plus 5cm}void Onglet::setDataGestion ({\bf DataGestion} \& {\em g})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classOnglet_a37c3fd19396bff952d901a1e5b0f05e8}
+
+
+donne une nouvelle \hyperlink{classDataGestion}{DataGestion} 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em g}]: nouvelle \hyperlink{classDataGestion}{DataGestion} \end{DoxyParams}
+\hypertarget{classOnglet_a534eb5c74e28ccd52c97f5ee69cb7d93}{
+\index{Onglet@{Onglet}!setDegre@{setDegre}}
+\index{setDegre@{setDegre}!Onglet@{Onglet}}
+\subsubsection[{setDegre}]{\setlength{\rightskip}{0pt plus 5cm}void Onglet::setDegre (const bool {\em val})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classOnglet_a534eb5c74e28ccd52c97f5ee69cb7d93}
+
+
+change la valeur du booléen degré 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]: nouvelle valeur du booléen \end{DoxyParams}
+\hypertarget{classOnglet_aefe162f23f7d169c8a46daa08dfc0ccb}{
+\index{Onglet@{Onglet}!setType@{setType}}
+\index{setType@{setType}!Onglet@{Onglet}}
+\subsubsection[{setType}]{\setlength{\rightskip}{0pt plus 5cm}void Onglet::setType (const Constante {\em val})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classOnglet_aefe162f23f7d169c8a46daa08dfc0ccb}
+
+
+change la valeur du type 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em val}]: nouvelle valeur du type \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+onglet.h\item 
+onglet.cpp\end{DoxyCompactItemize}

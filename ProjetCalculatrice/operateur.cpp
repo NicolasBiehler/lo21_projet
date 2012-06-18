@@ -529,3 +529,507 @@ Data& Operation::Mult::calcul(Pile<Data> *p) {
             throw CalculException("Multiplication Impossible!!!");
     }
 }
+
+
+
+// TESTS
+Data& Operation::Sin::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(sin(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(sin(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(sin(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("sin impossible");
+}
+
+Data& Operation::Cos::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(cos(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(cos(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(cos(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("cos impossible");
+}
+
+Data& Operation::Tan::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(tan(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(tan(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(tan(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("tan impossible");
+}
+
+Data& Operation::Sinh::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(sinh(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(sinh(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(sinh(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("sinh impossible");
+}
+
+Data& Operation::Cosh::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(cosh(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(cosh(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(cosh(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("cosh impossible");
+}
+
+Data& Operation::Tanh::calcul(Pile<Data>& p){
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(tanh(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(tanh(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(tanh(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("tanh impossible");
+}
+
+Data& Operation::Ln::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(log(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(log(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")) {
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(log(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("Ln impossible");
+}
+
+Data& Operation::Log::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Reel* resultat = new Reel(log10(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(log10(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")) {
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Reel* resultat = new Reel(log10(r.toReel().getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("Log10 impossible");
+}
+
+Data& Operation::Inv:calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        if(e.getValeur()==1) {
+            return e;
+        }
+        if(e.getValeur()!=0) {
+            Rationnel* resultat = new Rationnel(1,e.getValeur());
+            Rationnel& ref = *resultat;
+            return ref;
+        }
+        else {
+            throw CalculException("Erreur : inverse de 0 impossible");
+        }
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        if(e.getValeur()==1) {
+            return e;
+        }
+        if(e.getValeur()!=0) {
+            // on perd la virgule, reste la partie entière
+            Rationnel* resultat = new Rationnel(1,e.getValeur().toInt());
+            Rationnel& ref = *resultat;
+            return ref;
+        }
+        else {
+            throw CalculException("Erreur : inverse de 0 impossible");
+        }
+    }
+    else if(typeop1.contains("Rationnel")){
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Rationnel* resultat = new Rationnel(r.getDenominateur().getValeur(),r.getNumerateur().getValeur());
+        Rationnel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("Inversion impossible");
+}
+
+
+Data& Operation::Sqrt::calcul(Pile<Data>& p){
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        if(e.getValeur()<=0) {
+            throw CalculException("Erreur : racine carree impossible");
+        }
+
+        Entier* resultat = new Entier(sqrt(e.getValeur()));
+        Entier& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")){
+        Reel& e=dynamic_cast<Reel&>(op1);
+        if(e.getValeur()<=0) {
+            throw CalculException("Erreur : racine carree impossible");
+        }
+
+        Reel* resultat = new Reel(sqrt(e.getValeur()));
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")) {
+        Rationnel& r=dynamic_cast<Rationnel&>(op1);
+        Pile<Data> *pile1 = new Pile<Data>();
+        pile1->addPile(r.getNumerateur());
+        Pile<Data> *pile2 = new Pile<Data>();
+        pile2->addPile(r.getDenominateur());
+        Rationnel* resultat = new Rationnel(*Operation::Sqrt().calcul(pile1), *Operation::Sqrt.calcul(pile2));
+        Rationnel& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("Racine carree impossible!!!");
+}
+
+Data& Operation::Sqr::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        Entier* resultat = new Entier(e.getValeur()*e.getValeur());
+        Entier& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Reel")) {
+        Reel& e=dynamic_cast<Reel&>(op1);
+        Reel* resultat = new Reel(e.getValeur()*e.getValeur());
+        Reel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Rationnel")) {
+        Rationnel& e=dynamic_cast<Rationnel&>(op1);
+        Rationnel* resultat = new Rationnel(e.getNumerateur().getValeur()*e.getNumerateur().getValeur(),e.getDenominateur().getValeur()*e.getDenominateur().getValeur());
+        Rationnel& ref = *resultat;
+        return ref;
+    }
+    else if(typeop1.contains("Complexe")) {
+        Complexe& c=dynamic_cast<Complexe&>(op1);
+        QString typeIm=typeid(c.getImaginaire()).name();
+        if(typeIm.contains("Entier")) {
+            Entier& ei=dynamic_cast<Entier&>(c.getImaginaire());
+            QString typeRe=typeid(c.getReel()).name();
+            if(ei.getValeur()==1) {
+                if(typeRe.contains("Entier")) {
+                    Entier& e=dynamic_cast<Entier&>(c.getReel());
+                    Entier* resultat = new Entier((e.getValeur()-1)*(e.getValeur()-1));
+                    Entier& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Reel")) {
+                    Reel& e=dynamic_cast<Reel&>(c.getReel());
+                    Reel* resultat = new Reel((e.getValeur()-1)*(e.getValeur()-1));
+                    Reel& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Rationnel")) {
+                    Rationnel& e=dynamic_cast<Rationnel&>(c.getReel());
+                    Pile<Data> *pile = new Pile<Data>();
+                    pile->addPile(new Entier(1));
+                    pile->addPile(new Rationnel(&e));
+                    Rationnel* resultat = new Rationnel(Operation::Moins.calcul(pile)*Operation::Moins.calcul(pile));
+                    Rationnel& ref = *resultat;
+                    return ref;
+                }
+                else
+                    throw CalculException("carree impossible!!!");
+            }
+            else {
+                if(typeRe.contains("Entier")) {
+                    Entier& e=dynamic_cast<Entier&>(c.getReel());
+                    Pile<Data> *pileR = new Pile<Data>();
+                    pile->addPile(new Entier(e.getValeur()));
+                    Pile<Data> *pileI = new Pile<Data>();
+                    pile->addPile(new Entier(ei.getValeur()));
+                    Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                    Complexe& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Reel")) {
+                    Reel& e=dynamic_cast<Reel&>(c.getReel());
+                    Pile<Data> *pileR = new Pile<Data>();
+                    pile->addPile(new Reel(e.getValeur()));
+                    Pile<Data> *pileI = new Pile<Data>();
+                    pile->addPile(new Entier(ei.getValeur()));
+                    Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                    Complexe& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Rationnel")) {
+                    Rationnel& e=dynamic_cast<Rationnel&>(c.getReel());
+                    Pile<Data> *pileR = new Pile<Data>();
+                    pile->addPile(new Rationnel(&e));
+                    Pile<Data> *pileI = new Pile<Data>();
+                    pile->addPile(new Entier(ei.getValeur()));
+                    Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                    Complexe& ref = *resultat;
+                    return ref;
+                }
+                else
+                    throw CalculException("carree impossible!!!");
+            }
+        }
+        else if(typeIm.contains("Reel")) {
+            Reel& ei=dynamic_cast<Reel&>(c.getImaginaire());
+            QString typeRe=typeid(c.getReel()).name();
+            if(ei.getValeur()==1) {
+                if(typeRe.contains("Entier")) {
+                    Entier& e=dynamic_cast<Entier&>(c.getReel());
+                    Entier* resultat = new Entier((e.getValeur()-1)*(e.getValeur()-1));
+                    Entier& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Reel")) {
+                    Reel& e=dynamic_cast<Reel&>(c.getReel());
+                    Reel* resultat = new Reel((e.getValeur()-1)*(e.getValeur()-1));
+                    Reel& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Rationnel")) {
+                    Rationnel& e=dynamic_cast<Rationnel&>(c.getReel());
+                    Pile<Data> *pile = new Pile<Data>();
+                    pile->addPile(new Entier(1));
+                    pile->addPile(new Rationnel(&e));
+                    Rationnel* resultat = new Rationnel(Operation::Moins.calcul(pile)*Operation::Moins.calcul(pile));
+                    Rationnel& ref = *resultat;
+                    return ref;
+                }
+                else
+                    throw CalculException("carree impossible!!!");
+            }
+            else {
+                if(typeRe.contains("Entier")) {
+                    Entier& e=dynamic_cast<Entier&>(c.getReel());
+                    Pile<Data> *pileR = new Pile<Data>();
+                    pile->addPile(new Entier(e.getValeur()));
+                    Pile<Data> *pileI = new Pile<Data>();
+                    pile->addPile(new Reel(ei.getValeur()));
+                    Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                    Complexe& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Reel")) {
+                    Reel& e=dynamic_cast<Reel&>(c.getReel());
+                    Pile<Data> *pileR = new Pile<Data>();
+                    pile->addPile(new Reel(e.getValeur()));
+                    Pile<Data> *pileI = new Pile<Data>();
+                    pile->addPile(new Reel(ei.getValeur()));
+                    Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                    Complexe& ref = *resultat;
+                    return ref;
+                }
+                else if(typeRe.contains("Rationnel")) {
+                    Rationnel& e=dynamic_cast<Rationnel&>(c.getReel());
+                    Pile<Data> *pileR = new Pile<Data>();
+                    pile->addPile(new Rationnel(&e));
+                    Pile<Data> *pileI = new Pile<Data>();
+                    pile->addPile(new Reel(ei.getValeur()));
+                    Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                    Complexe& ref = *resultat;
+                    return ref;
+                }
+                else
+                    throw CalculException("carree impossible!!!");
+            }
+        }
+        else if(typeIm.contains("Rationnel")) {
+            if(typeRe.contains("Entier")) {
+                Entier& e=dynamic_cast<Entier&>(c.getReel());
+                Pile<Data> *pileR = new Pile<Data>();
+                pile->addPile(new Entier(e.getValeur()));
+                Pile<Data> *pileI = new Pile<Data>();
+                pile->addPile(new Rationnel(&ei));
+                Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                Complexe& ref = *resultat;
+                return ref;
+            }
+            else if(typeRe.contains("Reel")) {
+                Reel& e=dynamic_cast<Reel&>(c.getReel());
+                Pile<Data> *pileR = new Pile<Data>();
+                pile->addPile(new Reel(e.getValeur()));
+                Pile<Data> *pileI = new Pile<Data>();
+                pile->addPile(new Rationnel(&ei));
+                Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                Complexe& ref = *resultat;
+                return ref;
+            }
+            else if(typeRe.contains("Rationnel")) {
+                Rationnel& e=dynamic_cast<Rationnel&>(c.getReel());
+                Pile<Data> *pileR = new Pile<Data>();
+                pile->addPile(new Rationnel(&e));
+                Pile<Data> *pileI = new Pile<Data>();
+                pile->addPile(new Rationnel(&ei));
+                Complexe* resultat = new Complexe(Operation::Sqr.calcul(pileR),Operation::Sqr.calcul(pileI));
+                Complexe& ref = *resultat;
+                return ref;
+            }
+            else
+                throw CalculException("carree impossible!!!");
+        }
+        else
+            throw CalculException("carree impossible!!!");
+    }
+    else
+        throw CalculException("carree impossible!!!");
+}
+
+Data& Operation::Cube::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    Pile<Data> *pile = new Pile<Data>();
+    pile->addPile(op1.clone());
+    Data& op2 = Operation::Sqr.calcul(pile);
+    pile = new Pile<Data>();
+    pile->addPile(op2);
+    pile->addPile(op1);
+    return Operation::Mult.calcul(pile);
+}
+
+Data& Operation::Fact::calcul(Pile<Data>& p) {
+    Data & op1 = *p->pop();
+    QString typeop1=typeid(op1).name();
+    if(typeop1.contains("Entier")){
+        Entier& e=dynamic_cast<Entier&>(op1);
+        int nb = e.getValeur();
+        int res = 0, i=0;
+        while(nb-i>0) {
+            res *= (nb-i);
+            i++;
+        }
+        Entier* resultat = new Entier(res);
+        Entier& ref = *resultat;
+        return ref;
+    }
+    else
+        throw CalculException("factorielle impossible!!!");
+}

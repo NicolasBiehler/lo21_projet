@@ -59,6 +59,5 @@ std::string Onglet::sauverContexte() const {
         s << "<type>ratio</type>";
         break;
     }
-
     return s.str();
 }

@@ -1,0 +1,195 @@
+\hypertarget{classNombre_1_1Rationnel}{
+\section{Nombre::Rationnel Class Reference}
+\label{classNombre_1_1Rationnel}\index{Nombre::Rationnel@{Nombre::Rationnel}}
+}
+
+
+classe représentant les nombres rationnels  
+
+
+
+
+{\ttfamily \#include $<$data.h$>$}
+
+Inheritance diagram for Nombre::Rationnel:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classNombre_1_1Rationnel}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNombre_1_1Rationnel_ab0ee4363dc90feacdc79b0c78929059a}{Rationnel} (int n, int d)
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Rationnel_a6271bc256512bcd61dfb7a671f6af90e}{Rationnel} (const \hyperlink{classNombre_1_1Rationnel}{Rationnel} \&e)
+\begin{DoxyCompactList}\small\item\em Constructeur par recopie. \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Rationnel_a9ceaf1d936e80578441fdd95181932eb}{Rationnel} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Rationnel_a436ac28026acabc38547f594c07ad6dd}{$\sim$Rationnel} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a87e5a70d65efb04d24e4501c49e93793}{
+\hyperlink{classNombre_1_1Entier}{Entier} \& \hyperlink{classNombre_1_1Rationnel_a87e5a70d65efb04d24e4501c49e93793}{getNumerateur} () const }
+\label{classNombre_1_1Rationnel_a87e5a70d65efb04d24e4501c49e93793}
+
+\begin{DoxyCompactList}\small\item\em retourne le numerateur \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a7c3f2070efba44aa67ea1c4fe8c22704}{
+\hyperlink{classNombre_1_1Entier}{Entier} \& \hyperlink{classNombre_1_1Rationnel_a7c3f2070efba44aa67ea1c4fe8c22704}{getDenominateur} () const }
+\label{classNombre_1_1Rationnel_a7c3f2070efba44aa67ea1c4fe8c22704}
+
+\begin{DoxyCompactList}\small\item\em retourne le denominateur \item\end{DoxyCompactList}\item 
+void \hyperlink{classNombre_1_1Rationnel_a18c8f925fd5d353e8b985c9ea725fb70}{setNumerateur} (int n)
+\begin{DoxyCompactList}\small\item\em change le numerateur \item\end{DoxyCompactList}\item 
+void \hyperlink{classNombre_1_1Rationnel_abe4d3136a4e1aa0d76575602d6e4630f}{setDenominateur} (int d)
+\begin{DoxyCompactList}\small\item\em change le denominateur \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a12ee060e5fca5f4291b222983d727268}{
+void \hyperlink{classNombre_1_1Rationnel_a12ee060e5fca5f4291b222983d727268}{simplifier} ()}
+\label{classNombre_1_1Rationnel_a12ee060e5fca5f4291b222983d727268}
+
+\begin{DoxyCompactList}\small\item\em simplifie le rationnel en utilisant le pvcd \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_ae6cf0b5b3c8a7146f4f1d21a80f34397}{
+\hyperlink{classNombre_1_1Rationnel}{Rationnel} \& \hyperlink{classNombre_1_1Rationnel_ae6cf0b5b3c8a7146f4f1d21a80f34397}{toRationnel} () const }
+\label{classNombre_1_1Rationnel_ae6cf0b5b3c8a7146f4f1d21a80f34397}
+
+\begin{DoxyCompactList}\small\item\em transforme la \hyperlink{classNombre_1_1Data}{Data} en \hyperlink{classNombre_1_1Rationnel}{Rationnel} \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a441c5df2959c34f0253d40770467a2ed}{
+\hyperlink{classNombre_1_1Entier}{Entier} \& \hyperlink{classNombre_1_1Rationnel_a441c5df2959c34f0253d40770467a2ed}{toEntier} () const }
+\label{classNombre_1_1Rationnel_a441c5df2959c34f0253d40770467a2ed}
+
+\begin{DoxyCompactList}\small\item\em transforme la \hyperlink{classNombre_1_1Data}{Data} en \hyperlink{classNombre_1_1Entier}{Entier} \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a81f1f8f07b7b896ceaa00d4da2461c98}{
+\hyperlink{classNombre_1_1Reel}{Reel} \& \hyperlink{classNombre_1_1Rationnel_a81f1f8f07b7b896ceaa00d4da2461c98}{toReel} () const }
+\label{classNombre_1_1Rationnel_a81f1f8f07b7b896ceaa00d4da2461c98}
+
+\begin{DoxyCompactList}\small\item\em transforme la \hyperlink{classNombre_1_1Data}{Data} en \hyperlink{classNombre_1_1Reel}{Reel} \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Entier}{Entier} \hyperlink{classNombre_1_1Rationnel_a887d49ae935aa401e0dcce5c8534b894}{pgcd} (const \hyperlink{classNombre_1_1Entier}{Entier} \&a, const \hyperlink{classNombre_1_1Entier}{Entier} \&b)
+\begin{DoxyCompactList}\small\item\em retourne le pvcd \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a2631c49cbe0ecd80076a274d6c68cc28}{
+QString \& \hyperlink{classNombre_1_1Rationnel_a2631c49cbe0ecd80076a274d6c68cc28}{toString} () const }
+\label{classNombre_1_1Rationnel_a2631c49cbe0ecd80076a274d6c68cc28}
+
+\begin{DoxyCompactList}\small\item\em renvoie l'information en QString de la classe \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Rationnel_a982e0d69944eb578cd5d168e11559ab0}{
+\hyperlink{classNombre_1_1Rationnel}{Rationnel} \& \hyperlink{classNombre_1_1Rationnel_a982e0d69944eb578cd5d168e11559ab0}{clone} () const }
+\label{classNombre_1_1Rationnel_a982e0d69944eb578cd5d168e11559ab0}
+
+\begin{DoxyCompactList}\small\item\em clone la classe \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classNombre_1_1Rationnel_a4c6e7150cba3e9ab182361072965f209}{isRationnel} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em test si une string est un rationnel \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe représentant les nombres rationnels 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNombre_1_1Rationnel_ab0ee4363dc90feacdc79b0c78929059a}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!Rationnel@{Rationnel}}
+\index{Rationnel@{Rationnel}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{Rationnel}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Rationnel::Rationnel (int {\em n}, \/  int {\em d})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Rationnel_ab0ee4363dc90feacdc79b0c78929059a}
+
+
+Constructeur. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]: numerateur \item[{\em d}]: denominateur \end{DoxyParams}
+\hypertarget{classNombre_1_1Rationnel_a6271bc256512bcd61dfb7a671f6af90e}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!Rationnel@{Rationnel}}
+\index{Rationnel@{Rationnel}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{Rationnel}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Rationnel::Rationnel (const {\bf Rationnel} \& {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Rationnel_a6271bc256512bcd61dfb7a671f6af90e}
+
+
+Constructeur par recopie. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]: rationnel à copier \end{DoxyParams}
+\hypertarget{classNombre_1_1Rationnel_a9ceaf1d936e80578441fdd95181932eb}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!Rationnel@{Rationnel}}
+\index{Rationnel@{Rationnel}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{Rationnel}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Rationnel::Rationnel (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Rationnel_a9ceaf1d936e80578441fdd95181932eb}
+
+
+Constructeur. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: qstring ayant la valeur du rationnel \end{DoxyParams}
+\hypertarget{classNombre_1_1Rationnel_a436ac28026acabc38547f594c07ad6dd}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!$\sim$Rationnel@{$\sim$Rationnel}}
+\index{$\sim$Rationnel@{$\sim$Rationnel}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{$\sim$Rationnel}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Rationnel::$\sim$Rationnel ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Rationnel_a436ac28026acabc38547f594c07ad6dd}
+
+
+Destructeur. 
+
+Destructeur de la classe 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNombre_1_1Rationnel_a4c6e7150cba3e9ab182361072965f209}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!isRationnel@{isRationnel}}
+\index{isRationnel@{isRationnel}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{isRationnel}]{\setlength{\rightskip}{0pt plus 5cm}bool Nombre::Rationnel::isRationnel (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classNombre_1_1Rationnel_a4c6e7150cba3e9ab182361072965f209}
+
+
+test si une string est un rationnel 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: la QString a tester \end{DoxyParams}
+\hypertarget{classNombre_1_1Rationnel_a887d49ae935aa401e0dcce5c8534b894}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!pgcd@{pgcd}}
+\index{pgcd@{pgcd}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{pgcd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Entier} Rationnel::pgcd (const {\bf Entier} \& {\em a}, \/  const {\bf Entier} \& {\em b})}}
+\label{classNombre_1_1Rationnel_a887d49ae935aa401e0dcce5c8534b894}
+
+
+retourne le pvcd 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]: entier a \item[{\em b}]: entier b \end{DoxyParams}
+\hypertarget{classNombre_1_1Rationnel_abe4d3136a4e1aa0d76575602d6e4630f}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!setDenominateur@{setDenominateur}}
+\index{setDenominateur@{setDenominateur}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{setDenominateur}]{\setlength{\rightskip}{0pt plus 5cm}void Nombre::Rationnel::setDenominateur (int {\em d})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Rationnel_abe4d3136a4e1aa0d76575602d6e4630f}
+
+
+change le denominateur 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em d}]: nouvelle valeur \end{DoxyParams}
+\hypertarget{classNombre_1_1Rationnel_a18c8f925fd5d353e8b985c9ea725fb70}{
+\index{Nombre::Rationnel@{Nombre::Rationnel}!setNumerateur@{setNumerateur}}
+\index{setNumerateur@{setNumerateur}!Nombre::Rationnel@{Nombre::Rationnel}}
+\subsubsection[{setNumerateur}]{\setlength{\rightskip}{0pt plus 5cm}void Nombre::Rationnel::setNumerateur (int {\em n})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Rationnel_a18c8f925fd5d353e8b985c9ea725fb70}
+
+
+change le numerateur 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]: nouvelle valeur \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+data.h\item 
+data.cpp\end{DoxyCompactItemize}

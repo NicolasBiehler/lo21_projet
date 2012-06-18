@@ -1,0 +1,133 @@
+\hypertarget{classNombre_1_1Operateur}{
+\section{Nombre::Operateur Class Reference}
+\label{classNombre_1_1Operateur}\index{Nombre::Operateur@{Nombre::Operateur}}
+}
+
+
+classe représentant les opérateurs  
+
+
+
+
+{\ttfamily \#include $<$data.h$>$}
+
+Inheritance diagram for Nombre::Operateur:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classNombre_1_1Operateur}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNombre_1_1Operateur_a9a922f3e82e5a505ba03c7a7e9ce102f}{Operateur} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Operateur_a65f4226509f0cf55a129a08693b7dfcd}{$\sim$Operateur} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \item\end{DoxyCompactList}\item 
+void \hyperlink{classNombre_1_1Operateur_a6dffb3f48b67f10ad0f4b629d35086ab}{setOp} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em change l'opérateur \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Operateur_acf0dfeeb1249a1adf4a79df18e7f5395}{
+\hyperlink{classNombre_1_1Operateur}{Operateur} \& \hyperlink{classNombre_1_1Operateur_acf0dfeeb1249a1adf4a79df18e7f5395}{clone} () const }
+\label{classNombre_1_1Operateur_acf0dfeeb1249a1adf4a79df18e7f5395}
+
+\begin{DoxyCompactList}\small\item\em clone la classe \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Operateur_ae037f698338fb148d2e35aab60a688b8}{
+QString \& \hyperlink{classNombre_1_1Operateur_ae037f698338fb148d2e35aab60a688b8}{toString} () const }
+\label{classNombre_1_1Operateur_ae037f698338fb148d2e35aab60a688b8}
+
+\begin{DoxyCompactList}\small\item\em renvoie l'information en QString de la classe \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classNombre_1_1Operateur_aa245ad52a4b3adb3727750af78cc1ee3}{isOperateur} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em test si une string est un opérateur \item\end{DoxyCompactList}\item 
+static bool \hyperlink{classNombre_1_1Operateur_a5fb21bb459b4197a7ea462d212af5809}{isBinaire} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em test si une string est un opérateur binaire \item\end{DoxyCompactList}\item 
+static int \hyperlink{classNombre_1_1Operateur_aedeab5364cf6164cc18e7e555ffceb9a}{findOperateur} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em trouve l'opérateur correspondant er retourne son index dans le tableau \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe représentant les opérateurs 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNombre_1_1Operateur_a9a922f3e82e5a505ba03c7a7e9ce102f}{
+\index{Nombre::Operateur@{Nombre::Operateur}!Operateur@{Operateur}}
+\index{Operateur@{Operateur}!Nombre::Operateur@{Nombre::Operateur}}
+\subsubsection[{Operateur}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Operateur::Operateur (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Operateur_a9a922f3e82e5a505ba03c7a7e9ce102f}
+
+
+Constructeur. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: qstring ayant la valeur de l'opérateur \end{DoxyParams}
+\hypertarget{classNombre_1_1Operateur_a65f4226509f0cf55a129a08693b7dfcd}{
+\index{Nombre::Operateur@{Nombre::Operateur}!$\sim$Operateur@{$\sim$Operateur}}
+\index{$\sim$Operateur@{$\sim$Operateur}!Nombre::Operateur@{Nombre::Operateur}}
+\subsubsection[{$\sim$Operateur}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Operateur::$\sim$Operateur ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Operateur_a65f4226509f0cf55a129a08693b7dfcd}
+
+
+Destructeur. 
+
+Destructeur de la classe 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNombre_1_1Operateur_aedeab5364cf6164cc18e7e555ffceb9a}{
+\index{Nombre::Operateur@{Nombre::Operateur}!findOperateur@{findOperateur}}
+\index{findOperateur@{findOperateur}!Nombre::Operateur@{Nombre::Operateur}}
+\subsubsection[{findOperateur}]{\setlength{\rightskip}{0pt plus 5cm}int Operateur::findOperateur (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classNombre_1_1Operateur_aedeab5364cf6164cc18e7e555ffceb9a}
+
+
+trouve l'opérateur correspondant er retourne son index dans le tableau 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: la QString correspondant à l'opérateur \end{DoxyParams}
+\hypertarget{classNombre_1_1Operateur_a5fb21bb459b4197a7ea462d212af5809}{
+\index{Nombre::Operateur@{Nombre::Operateur}!isBinaire@{isBinaire}}
+\index{isBinaire@{isBinaire}!Nombre::Operateur@{Nombre::Operateur}}
+\subsubsection[{isBinaire}]{\setlength{\rightskip}{0pt plus 5cm}bool Operateur::isBinaire (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classNombre_1_1Operateur_a5fb21bb459b4197a7ea462d212af5809}
+
+
+test si une string est un opérateur binaire 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: la QString a tester \end{DoxyParams}
+\hypertarget{classNombre_1_1Operateur_aa245ad52a4b3adb3727750af78cc1ee3}{
+\index{Nombre::Operateur@{Nombre::Operateur}!isOperateur@{isOperateur}}
+\index{isOperateur@{isOperateur}!Nombre::Operateur@{Nombre::Operateur}}
+\subsubsection[{isOperateur}]{\setlength{\rightskip}{0pt plus 5cm}bool Operateur::isOperateur (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classNombre_1_1Operateur_aa245ad52a4b3adb3727750af78cc1ee3}
+
+
+test si une string est un opérateur 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: la QString a tester \end{DoxyParams}
+\hypertarget{classNombre_1_1Operateur_a6dffb3f48b67f10ad0f4b629d35086ab}{
+\index{Nombre::Operateur@{Nombre::Operateur}!setOp@{setOp}}
+\index{setOp@{setOp}!Nombre::Operateur@{Nombre::Operateur}}
+\subsubsection[{setOp}]{\setlength{\rightskip}{0pt plus 5cm}void Nombre::Operateur::setOp (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Operateur_a6dffb3f48b67f10ad0f4b629d35086ab}
+
+
+change l'opérateur 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: qstring ayant la valeur de l'opérateur \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+data.h\item 
+data.cpp\end{DoxyCompactItemize}

@@ -8,20 +8,16 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     nbonglet=0;
     mesonglets = new Onglet();
-    //Collection_Onglet::GetInstance().ajouterOnglet(mesonglets);
     ui->setupUi(this);
     QVBoxLayout* l = new QVBoxLayout();
-    ui->centralWidget->setLayout(l);
-   // Onglet * onglet1 = new Onglet();
+    ui->centralWidget->setLayout(l);;
     l->addWidget(mesonglets);
-    //mesonglets->addTab(onglet1,"Calc");
     l->addWidget(ui->frame);
     mesonglets->setMaximumHeight(24);
     mesonglets->setTabsClosable(true);
 
     nouvelOnglet();
 
-    //mesonglets->setBackgroundRole(QPalette::Background);
     QObject::connect(ui->num0,SIGNAL(clicked()),this,SLOT(num0Pressed()));
     QObject::connect(ui->num1,SIGNAL(clicked()),this,SLOT(num1Pressed()));
     QObject::connect(ui->num2,SIGNAL(clicked()),this,SLOT(num2Pressed()));
@@ -69,23 +65,16 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(mesonglets,SIGNAL(currentChanged(int)),this,SLOT(changerOnglet(int)));
     QObject::connect(ui->evalButton,SIGNAL(clicked()),this,SLOT(evalPressed()));
     QObject::connect(ui->action_Quit,SIGNAL(triggered()),this,SLOT(Quitter()));
+    QObject::connect(ui->actionAnnuler,SIGNAL(triggered()),this,SLOT(annuler()));
+    QObject::connect(ui->actionR_tablir,SIGNAL(triggered()),this,SLOT(retablir()));
 
-    Operation::Moins *essai;
-    Pile<Data> *mapile = new Pile<Data>();
-    Entier *e1 = new Entier(4);
-    Rationnel *e2 = new Rationnel(1,56);
-    mapile->addPile(e1);
-    mapile->addPile(e2);
-    Data& resultat = essai->calcul(mapile);
-    Rationnel& r3 = dynamic_cast<Rationnel&>(resultat);
-    ui->textEdit->setText(r3.toEntier().toString());
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+//Signaux touches
 void MainWindow::num0Pressed(){
     ui->inputLine->insert("0");
 }
@@ -124,7 +113,7 @@ void MainWindow::num8Pressed(){
 void MainWindow::num9Pressed(){
     ui->inputLine->insert("9");
 }
-/* Signaux à associer... */
+
 void MainWindow::SINPressed(){
     ui->inputLine->insert(" SIN ");
 }
@@ -200,11 +189,26 @@ void MainWindow::dollarPressed(){
 void MainWindow::quotePressed(){
     ui->inputLine->insert("'");
 }
+void MainWindow::annuler(){
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->getDataGestion().annuler();
+    ui->textEdit->setText(tmp->getDataGestion().getStockage().top()->toString());
 
+}
+void MainWindow::retablir(){
+    Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
+    tmp->getDataGestion().retablir();
+    ui->textEdit->setText(tmp->getDataGestion().getStockage().top()->toString());
+}
+
+//Signaux parametres
 void MainWindow::evalPressed(){
     Onglet * tmp = Collection_Onglet::GetInstance().at(mesonglets->currentIndex());
-    ui->textEdit->setText(QString::number(tmp->tailleStockage()));
+    tmp->getDataGestion().parse(ui->inputLine->text());
+        ui->textEdit->setText(tmp->getDataGestion().getStockage().top()->toString());
+    ui->inputLine->clear();
 }
+
 
 void MainWindow::ratioClicked(){
     ui->ratioButton->setChecked(1);
@@ -255,7 +259,7 @@ void MainWindow::radianClicked(){
     tmp->setDegre(false);
 }
 
-
+//Signaux onglets
 void MainWindow::fermerOnglet(int index){
     if(mesonglets->count()>1){
         mesonglets->removeTab(index);

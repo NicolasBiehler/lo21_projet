@@ -137,6 +137,6 @@ void Collection_Onglet::chargerContexte() {
 }
 
 Collection_Onglet::~Collection_Onglet(){
-    instance->at(0)->getDataGestion().getFactory().releaseInstance();
+    Factory::releaseInstance();
     saveContexte();
  }

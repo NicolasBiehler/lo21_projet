@@ -1,0 +1,65 @@
+\hypertarget{classFactory}{
+\section{Factory Class Reference}
+\label{classFactory}\index{Factory@{Factory}}
+}
+
+
+classe gérant la création des différents éléments de données du programme  
+
+
+
+
+{\ttfamily \#include $<$factory.h$>$}
+
+Inheritance diagram for Factory:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.48148cm]{classFactory}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNombre_1_1Data}{Nombre::Data} $\ast$ \hyperlink{classFactory_afe37851e80172944b37491a952a28370}{creer} (QString s)
+\begin{DoxyCompactList}\small\item\em cree une nouvelle Data à partir d'une QString et la renvoie \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classFactory_a7e83e40092e51b63c55cef6b859cda1c}{
+static \hyperlink{classFactory}{Factory} \& \hyperlink{classFactory_a7e83e40092e51b63c55cef6b859cda1c}{getInstance} ()}
+\label{classFactory_a7e83e40092e51b63c55cef6b859cda1c}
+
+\begin{DoxyCompactList}\small\item\em retourne l'instance de la classe \item\end{DoxyCompactList}\item 
+\hypertarget{classFactory_a19a1ea29727938017d6a61fe24aab08b}{
+static void \hyperlink{classFactory_a19a1ea29727938017d6a61fe24aab08b}{releaseInstance} ()}
+\label{classFactory_a19a1ea29727938017d6a61fe24aab08b}
+
+\begin{DoxyCompactList}\small\item\em libère l'instance de la classe \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe gérant la création des différents éléments de données du programme 
+
+\subsection{Member Function Documentation}
+\hypertarget{classFactory_afe37851e80172944b37491a952a28370}{
+\index{Factory@{Factory}!creer@{creer}}
+\index{creer@{creer}!Factory@{Factory}}
+\subsubsection[{creer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data} $\ast$ Factory::creer (QString {\em s})}}
+\label{classFactory_afe37851e80172944b37491a952a28370}
+
+
+cree une nouvelle Data à partir d'une QString et la renvoie 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: QString servant de base à la création de la donnée \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classEntierFactory_a17b1d9b2f18be4ad886f23cecd0ecb7c}{EntierFactory}, \hyperlink{classReelFactory_a09c1138eecb34e7ed2664b335ba6aa13}{ReelFactory}, \hyperlink{classRationnelFactory_aefce747781195682e508436186875fca}{RationnelFactory}, \hyperlink{classComplexeFactory_a751c417a005259673accfc2a60fd62fd}{ComplexeFactory}, \hyperlink{classExpressionFactory_a4df557fb77406bbfc1dc28a0fb830204}{ExpressionFactory}, and \hyperlink{classOperateurFactory_a0b817d63174f2c7c86020f3d9eebf7ce}{OperateurFactory}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+factory.h\item 
+factory.cpp\end{DoxyCompactItemize}

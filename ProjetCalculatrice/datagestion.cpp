@@ -1,4 +1,5 @@
 #include "datagestion.h"
+#include <iostream>
 
 DataGestion::DataGestion() {
     pileAffichage = new Pile<QString>();
@@ -25,13 +26,13 @@ void DataGestion::parse(QString expression) {
                 pileStockage->addPile(DataGestion::factoryInstance->creer(s));
                 tmp.addPile(DataGestion::factoryInstance->creer(s));
             }
-            //Nombre::Data& res = calculStrategy->calcul(tmp);
-            //pileStockage->addPile(&res);
-            //pileAffichage->addPile(&res.toString());
+            Nombre::Data& res = calculStrategy->calcul(tmp);
+            pileStockage->addPile(&res);
+            pileAffichage->addPile(&res.toString());
         }
     }
     else {
-        QStringList list = expression.split(" ");
+        QStringList list = expression.split(" ",QString::SkipEmptyParts);
         foreach(QString s, list) {
             pileAffichage->addPile(&s);
             pileStockage->addPile(DataGestion::factoryInstance->creer(s));
@@ -41,72 +42,183 @@ void DataGestion::parse(QString expression) {
 }
 
 void DataGestion::calcul() {
-    if(pileStockage->isEmpty())
+    if(pileStockage->isEmpty()){
         throw CalculException("La pile est vide, pas de calcul a faire");
+    }
+
     if(Nombre::Operateur::isOperateur(pileStockage->top()->toString())) {
         int op = Nombre::Operateur::findOperateur(pileStockage->top()->toString());
         if(op==-1)
             throw CalculException("Operateur non reconnu, videz la pile svp");
-
-     /*   switch(op) {
+        Data& ope = *pileStockage->pop();
+        switch(op) {
         case 0:
-            calculStrategy = new Operation::Plus();
+            Operation::Plus *additionner;
+            if(1){
+                Data& resultat = additionner->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 1:
-            calculStrategy = new Operation::Moins();
+            Operation::Moins *soustraire;
+            if(1){
+                Data& resultat = soustraire->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 2:
-            calculStrategy = new Operation::Mult();
+            Operation::Mult *multiplier;
+            if(1){
+                Data& resultat = multiplier->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 3:
-            calculStrategy = new Operation::Div();
+            Operation::Div *diviser;
+            if(1){
+                Data& resultat = diviser->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 4:
-            calculStrategy = new Operation::Mod();
+            Operation::Mod *modulo;
+            if(1){
+                Data& resultat = modulo->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 5:
-            calculStrategy = new Operation::Pow();
-        case 6:
-            calculStrategy = new Operation::Sign();
-        case 7:
-            calculStrategy = new Operation::Sin();
+            Operation::Pow *puissance;
+            if(1){
+                Data& resultat = puissance->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
+    /*    case 6:
+            Operation::Plus *sign;
+            calculStrategy = sign;
+            break;
+   */     case 7:
+            Operation::Sin *sinus;
+            if(1){
+                Data& resultat = sinus->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 8:
-            calculStrategy = new Operation::Cos();
+            Operation::Cos *cosinus;
+            if(1){
+                Data& resultat = cosinus->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 9:
-            calculStrategy = new Operation::Tan();
+            Operation::Tan *tangente;
+            if(1){
+                Data& resultat = tangente->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 10:
-            calculStrategy = new Operation::Tanh();
+            Operation::Tanh *tangenteh;
+            if(1){
+                Data& resultat = tangenteh->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 11:
-            calculStrategy = new Operation::Sinh();
+            Operation::Sinh *sinush;
+            if(1){
+                Data& resultat = sinush->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 12:
-            calculStrategy = new Operation::Cosh();
+            Operation::Cosh *cosinush;
+            if(1){
+                Data& resultat = cosinush->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 13:
-            calculStrategy = new Operation::Ln();
+            Operation::Ln *ln;
+            if(1){
+                Data& resultat = ln->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 14:
-            calculStrategy = new Operation::Log();
+            Operation::Log *log;
+            if(1){
+                Data& resultat = log->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 15:
-            calculStrategy = new Operation::Inv();
+            Operation::Inv *inverse;
+            if(1){
+                Data& resultat = inverse->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
         case 16:
-            calculStrategy = new Operation::Sqrt();
-        case 17:
+            Operation::Sqrt *racine;
+            if(1){
+                Data& resultat = racine->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+            }
+            break;
+ /*       case 17:
+            Operation::Plus *carre;
             calculStrategy = new Operation::Sqr();
+            break;
         case 18:
+            Operation::Plus *cube;
             calculStrategy = new Operation::Cube();
-        case 19:
-            calculStrategy = new Operation::Fact();
+            break;
+*/        case 19:
+            Operation::Fact *factoriel;
+            if(1){
+                Data& resultat = factoriel->calcul(pileStockage);
+                pileStockage->addPile(&ope);
+                pileStockage->addPile(&resultat);
+                pileAffichage->addPile(&resultat.toString());
+            }
+            break;
         default:
             throw CalculException("Operateur non reconnu, videz la pile svp");
-        }*/
-        //calculStrategy->calcul(pileStockage);
-    }
+            break;
+        }
     // sinon, rien a faire, rien a calculer
+    }
 }
 
-DataGestion& DataGestion::clone() const {
+/*DataGestion& DataGestion::clone() const {
     DataGestion* dg = new DataGestion();
-    //dg->setAffichage(this->pileAffichage->clone());
-   // dg->setRetablir(this->pileRetablir->clone());
-   // dg->setStockage(this->pileStockage->clone());
+    dg->setAffichage(this->pileAffichage->clone());
+    dg->setRetablir(this->pileRetablir->clone());
+    dg->setStockage(this->pileStockage->clone());
     dg->calculStrategy = 0;
 
     DataGestion& ref = *dg;
     return ref;
-}
+}*/
 
 void DataGestion::annuler(){
     if(this->getStockage().isEmpty())         //Si la pile est vide

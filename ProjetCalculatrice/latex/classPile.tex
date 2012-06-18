@@ -1,0 +1,147 @@
+\hypertarget{classPile}{
+\section{Pile$<$ T $>$ Class Template Reference}
+\label{classPile}\index{Pile@{Pile}}
+}
+
+
+classe pile, gardant les données du programme  
+
+
+
+
+{\ttfamily \#include $<$pile.h$>$}
+
+Inheritance diagram for Pile$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classPile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classPile_a6393ea69d41a484a63f691bef44469a7}{Pile} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classPile_ac10aba315bae705a7821c41d5d31e11c}{$\sim$Pile} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \item\end{DoxyCompactList}\item 
+void \hyperlink{classPile_a685bd6ecb5c0c7805e4aa9f45e7a1289}{SWAP} (unsigned int x, unsigned int y)
+\begin{DoxyCompactList}\small\item\em échange les éléments x et y de la pile. \item\end{DoxyCompactList}\item 
+T \& \hyperlink{classPile_a35fc6cd5606215120f150629315c615a}{SUM} (const unsigned int x) const 
+\begin{DoxyCompactList}\small\item\em Renvoie la Somme les x premiers elements de la pile. \item\end{DoxyCompactList}\item 
+T \& \hyperlink{classPile_a5b576fb2729b6f1d79c05b8932b91588}{MEAN} (const unsigned int x) const 
+\begin{DoxyCompactList}\small\item\em Renvoie la Moyenne des x premiers elements de la pile. \item\end{DoxyCompactList}\item 
+\hypertarget{classPile_a0532e4cbf4f9521b09a30f5cd0f4f4ad}{
+void \hyperlink{classPile_a0532e4cbf4f9521b09a30f5cd0f4f4ad}{CLEAR} ()}
+\label{classPile_a0532e4cbf4f9521b09a30f5cd0f4f4ad}
+
+\begin{DoxyCompactList}\small\item\em vide la pile \item\end{DoxyCompactList}\item 
+\hypertarget{classPile_a8b4213827764783cb5b8463d81315055}{
+void \hyperlink{classPile_a8b4213827764783cb5b8463d81315055}{DUP} () const }
+\label{classPile_a8b4213827764783cb5b8463d81315055}
+
+\begin{DoxyCompactList}\small\item\em Duplique le premier element de la pile. \item\end{DoxyCompactList}\item 
+\hypertarget{classPile_ab3bff8336491d068c21958939737571f}{
+void \hyperlink{classPile_ab3bff8336491d068c21958939737571f}{DROP} ()}
+\label{classPile_ab3bff8336491d068c21958939737571f}
+
+\begin{DoxyCompactList}\small\item\em libère le premier element de la pile \item\end{DoxyCompactList}\item 
+\hypertarget{classPile_a0615cbdce400a7aea271de2193e46fe4}{
+\hyperlink{classPile}{Pile}$<$ T $>$ \& \hyperlink{classPile_a0615cbdce400a7aea271de2193e46fe4}{clone} ()}
+\label{classPile_a0615cbdce400a7aea271de2193e46fe4}
+
+\begin{DoxyCompactList}\small\item\em Renvoie une reference vers une copie de la pile. \item\end{DoxyCompactList}\item 
+void \hyperlink{classPile_a5e80dbc7bc37bb4cc6439a2299bb2327}{addPile} (T $\ast$x)
+\begin{DoxyCompactList}\small\item\em Ajoute un element dans la pile. \item\end{DoxyCompactList}\item 
+\hypertarget{classPile_a3e8bd308a162809611df5e2872946820}{
+int \hyperlink{classPile_a3e8bd308a162809611df5e2872946820}{taille} ()}
+\label{classPile_a3e8bd308a162809611df5e2872946820}
+
+\begin{DoxyCompactList}\small\item\em retourne la taille de la pile \item\end{DoxyCompactList}\item 
+\hypertarget{classPile_ac3e83355eb3e97f68e1a91e90ee09123}{
+\hyperlink{classPile}{Pile}$<$ T $>$ \& \hyperlink{classPile_ac3e83355eb3e97f68e1a91e90ee09123}{pileResultat} () const }
+\label{classPile_ac3e83355eb3e97f68e1a91e90ee09123}
+
+\begin{DoxyCompactList}\small\item\em retourne les resultats seulement dans la pile de stockage \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$ class Pile$<$ T $>$}
+
+classe pile, gardant les données du programme 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPile_a6393ea69d41a484a63f691bef44469a7}{
+\index{Pile@{Pile}!Pile@{Pile}}
+\index{Pile@{Pile}!Pile@{Pile}}
+\subsubsection[{Pile}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Pile}$<$ T $>$::{\bf Pile} ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPile_a6393ea69d41a484a63f691bef44469a7}
+
+
+Constructeur. 
+
+Constructeur de la classe \hyperlink{classPile}{Pile}, sans argument \hypertarget{classPile_ac10aba315bae705a7821c41d5d31e11c}{
+\index{Pile@{Pile}!$\sim$Pile@{$\sim$Pile}}
+\index{$\sim$Pile@{$\sim$Pile}!Pile@{Pile}}
+\subsubsection[{$\sim$Pile}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf Pile}$<$ T $>$::$\sim${\bf Pile} ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPile_ac10aba315bae705a7821c41d5d31e11c}
+
+
+Destructeur. 
+
+Destructeur de la classe \hyperlink{classPile}{Pile}, appelle le destructeur de chaque élément 
+
+\subsection{Member Function Documentation}
+\hypertarget{classPile_a5e80dbc7bc37bb4cc6439a2299bb2327}{
+\index{Pile@{Pile}!addPile@{addPile}}
+\index{addPile@{addPile}!Pile@{Pile}}
+\subsubsection[{addPile}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf Pile}$<$ T $>$::addPile (T $\ast$ {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPile_a5e80dbc7bc37bb4cc6439a2299bb2327}
+
+
+Ajoute un element dans la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]: élément à ajouter \end{DoxyParams}
+\hypertarget{classPile_a5b576fb2729b6f1d79c05b8932b91588}{
+\index{Pile@{Pile}!MEAN@{MEAN}}
+\index{MEAN@{MEAN}!Pile@{Pile}}
+\subsubsection[{MEAN}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf Pile}$<$ T $>$::MEAN (const unsigned int {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPile_a5b576fb2729b6f1d79c05b8932b91588}
+
+
+Renvoie la Moyenne des x premiers elements de la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]: nombre d'éléments à sommer puis à faire la moyenne \end{DoxyParams}
+\hypertarget{classPile_a35fc6cd5606215120f150629315c615a}{
+\index{Pile@{Pile}!SUM@{SUM}}
+\index{SUM@{SUM}!Pile@{Pile}}
+\subsubsection[{SUM}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf Pile}$<$ T $>$::SUM (const unsigned int {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPile_a35fc6cd5606215120f150629315c615a}
+
+
+Renvoie la Somme les x premiers elements de la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]: nombre d'éléments à sommer \end{DoxyParams}
+\hypertarget{classPile_a685bd6ecb5c0c7805e4aa9f45e7a1289}{
+\index{Pile@{Pile}!SWAP@{SWAP}}
+\index{SWAP@{SWAP}!Pile@{Pile}}
+\subsubsection[{SWAP}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf Pile}$<$ T $>$::SWAP (unsigned int {\em x}, \/  unsigned int {\em y})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classPile_a685bd6ecb5c0c7805e4aa9f45e7a1289}
+
+
+échange les éléments x et y de la pile. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]: élément de position x dans la pile \item[{\em y}]: élément de position y dans la pile \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+pile.h\item 
+pile.cpp\end{DoxyCompactItemize}

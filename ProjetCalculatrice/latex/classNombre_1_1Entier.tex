@@ -1,0 +1,146 @@
+\hypertarget{classNombre_1_1Entier}{
+\section{Nombre::Entier Class Reference}
+\label{classNombre_1_1Entier}\index{Nombre::Entier@{Nombre::Entier}}
+}
+
+
+classe représentant les nombres entiers  
+
+
+
+
+{\ttfamily \#include $<$data.h$>$}
+
+Inheritance diagram for Nombre::Entier:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classNombre_1_1Entier}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNombre_1_1Entier_aba1baf196e52fb9ea0398e5c5695bf61}{Entier} (int i)
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Entier_a15923a12f9ef441d981f7c8b0977d233}{Entier} (const \hyperlink{classNombre_1_1Entier}{Entier} \&e)
+\begin{DoxyCompactList}\small\item\em Constructeur par recopie. \item\end{DoxyCompactList}\item 
+\hyperlink{classNombre_1_1Entier_ae18e68f53e56a1ed8e951cb43b7b34d1}{Entier} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Entier_a77282a0f57f0bdaecb5abceab8ad38d1}{
+int \hyperlink{classNombre_1_1Entier_a77282a0f57f0bdaecb5abceab8ad38d1}{getValeur} () const }
+\label{classNombre_1_1Entier_a77282a0f57f0bdaecb5abceab8ad38d1}
+
+\begin{DoxyCompactList}\small\item\em retourne la valeur \item\end{DoxyCompactList}\item 
+void \hyperlink{classNombre_1_1Entier_a434f40deb776ef9f128629095d130bf2}{setValeur} (int i)
+\begin{DoxyCompactList}\small\item\em donne une nouvelle valeur \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Entier_ad2ad3a58c27c2a288f0879eac1f3d73d}{
+\hyperlink{classNombre_1_1Entier}{Entier} \& \hyperlink{classNombre_1_1Entier_ad2ad3a58c27c2a288f0879eac1f3d73d}{toEntier} () const }
+\label{classNombre_1_1Entier_ad2ad3a58c27c2a288f0879eac1f3d73d}
+
+\begin{DoxyCompactList}\small\item\em transforme la \hyperlink{classNombre_1_1Data}{Data} en \hyperlink{classNombre_1_1Entier}{Entier} \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Entier_a1844bb6f59d844abdd10c1b9d252ae49}{
+\hyperlink{classNombre_1_1Reel}{Reel} \& \hyperlink{classNombre_1_1Entier_a1844bb6f59d844abdd10c1b9d252ae49}{toReel} () const }
+\label{classNombre_1_1Entier_a1844bb6f59d844abdd10c1b9d252ae49}
+
+\begin{DoxyCompactList}\small\item\em transforme la \hyperlink{classNombre_1_1Data}{Data} en \hyperlink{classNombre_1_1Reel}{Reel} \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Entier_a74bc77a7d8ea295c30c4acebf8539d32}{
+\hyperlink{classNombre_1_1Rationnel}{Rationnel} \& \hyperlink{classNombre_1_1Entier_a74bc77a7d8ea295c30c4acebf8539d32}{toRationnel} () const }
+\label{classNombre_1_1Entier_a74bc77a7d8ea295c30c4acebf8539d32}
+
+\begin{DoxyCompactList}\small\item\em transforme la \hyperlink{classNombre_1_1Data}{Data} en \hyperlink{classNombre_1_1Rationnel}{Rationnel} \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Entier_a2ace2d2bb563a7df910b9dc5624002b6}{
+QString \& \hyperlink{classNombre_1_1Entier_a2ace2d2bb563a7df910b9dc5624002b6}{toString} () const }
+\label{classNombre_1_1Entier_a2ace2d2bb563a7df910b9dc5624002b6}
+
+\begin{DoxyCompactList}\small\item\em renvoie l'information en QString de la classe \item\end{DoxyCompactList}\item 
+\hypertarget{classNombre_1_1Entier_a8ce06f07633461fa87d8b818086563f0}{
+\hyperlink{classNombre_1_1Entier}{Entier} \& \hyperlink{classNombre_1_1Entier_a8ce06f07633461fa87d8b818086563f0}{clone} () const }
+\label{classNombre_1_1Entier_a8ce06f07633461fa87d8b818086563f0}
+
+\begin{DoxyCompactList}\small\item\em clone la classe \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classNombre_1_1Entier_a3460b04b6428c23fef45c4d6e204ea80}{isEntier} (const QString \&s)
+\begin{DoxyCompactList}\small\item\em test si une string est un entier \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe représentant les nombres entiers 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNombre_1_1Entier_aba1baf196e52fb9ea0398e5c5695bf61}{
+\index{Nombre::Entier@{Nombre::Entier}!Entier@{Entier}}
+\index{Entier@{Entier}!Nombre::Entier@{Nombre::Entier}}
+\subsubsection[{Entier}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Entier::Entier (int {\em i})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Entier_aba1baf196e52fb9ea0398e5c5695bf61}
+
+
+Constructeur. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]: valeur de l'entier \end{DoxyParams}
+\hypertarget{classNombre_1_1Entier_a15923a12f9ef441d981f7c8b0977d233}{
+\index{Nombre::Entier@{Nombre::Entier}!Entier@{Entier}}
+\index{Entier@{Entier}!Nombre::Entier@{Nombre::Entier}}
+\subsubsection[{Entier}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Entier::Entier (const {\bf Entier} \& {\em e})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Entier_a15923a12f9ef441d981f7c8b0977d233}
+
+
+Constructeur par recopie. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em e}]: entier à copier \end{DoxyParams}
+\hypertarget{classNombre_1_1Entier_ae18e68f53e56a1ed8e951cb43b7b34d1}{
+\index{Nombre::Entier@{Nombre::Entier}!Entier@{Entier}}
+\index{Entier@{Entier}!Nombre::Entier@{Nombre::Entier}}
+\subsubsection[{Entier}]{\setlength{\rightskip}{0pt plus 5cm}Nombre::Entier::Entier (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Entier_ae18e68f53e56a1ed8e951cb43b7b34d1}
+
+
+Constructeur. 
+
+Constructeur de la classe
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: qstring ayant la valeur de l'entier \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNombre_1_1Entier_a3460b04b6428c23fef45c4d6e204ea80}{
+\index{Nombre::Entier@{Nombre::Entier}!isEntier@{isEntier}}
+\index{isEntier@{isEntier}!Nombre::Entier@{Nombre::Entier}}
+\subsubsection[{isEntier}]{\setlength{\rightskip}{0pt plus 5cm}bool Nombre::Entier::isEntier (const QString \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classNombre_1_1Entier_a3460b04b6428c23fef45c4d6e204ea80}
+
+
+test si une string est un entier 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]: la QString a tester \end{DoxyParams}
+\hypertarget{classNombre_1_1Entier_a434f40deb776ef9f128629095d130bf2}{
+\index{Nombre::Entier@{Nombre::Entier}!setValeur@{setValeur}}
+\index{setValeur@{setValeur}!Nombre::Entier@{Nombre::Entier}}
+\subsubsection[{setValeur}]{\setlength{\rightskip}{0pt plus 5cm}void Nombre::Entier::setValeur (int {\em i})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classNombre_1_1Entier_a434f40deb776ef9f128629095d130bf2}
+
+
+donne une nouvelle valeur 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]: nouvelle valeur \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+data.h\item 
+data.cpp\end{DoxyCompactItemize}

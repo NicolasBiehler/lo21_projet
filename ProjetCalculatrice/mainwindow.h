@@ -1,6 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+/**
+ * \file MainWindow.h
+ * \brief Classe MainWindow
+ * \author Nicolas Biehler/Jean-Baptiste Arzounian
+ *
+ */
+
 #include <QMainWindow>
 #include <QMessageBox>
 #include <QString>
@@ -11,16 +18,32 @@
 namespace Ui {
 class MainWindow;
 }
-
+/*! \class MainWindow
+   * \brief classe servant à coder l'interface
+   *
+   */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
     
 public:
+                /*!
+         *  \brief Constructeur
+         *
+         *  Constructeur de la classe
+         *
+         * \param parent : le widget parent
+         */
     explicit MainWindow(QWidget *parent);
+                    /*!
+         *  \brief Destructeur
+         *
+         *  Destructeur de la classe
+         *
+         */
     ~MainWindow();
-    Onglet *mesonglets;
-    int nbonglet;
+    Onglet *mesonglets; /*!< pointeur sur la collection d'onglets */
+    int nbonglet; /*!< nombre d'onglets courants */
 
 private slots:
     void num0Pressed();
@@ -71,9 +94,11 @@ private slots:
     void refreshUI(int index);
     void evalPressed();
     void Quitter();
+    void annuler();
+    void retablir();
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui; /*!< instance de l'IHM */
 };
 
 #endif // MAINWINDOW_H

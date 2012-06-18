@@ -1,0 +1,152 @@
+\hypertarget{classDataGestion}{
+\section{DataGestion Class Reference}
+\label{classDataGestion}\index{DataGestion@{DataGestion}}
+}
+
+
+classe servant de facade entre les données du programme et l'interface Permet de gérer tout le programme  
+
+
+
+
+{\ttfamily \#include $<$datagestion.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDataGestion_a5d90c5f766c07879a9e93a3e52e1a0c7}{DataGestion} ()
+\begin{DoxyCompactList}\small\item\em Constructeur. \item\end{DoxyCompactList}\item 
+\hyperlink{classDataGestion_a79229dcf9eb13b003468c8543a195311}{$\sim$DataGestion} ()
+\begin{DoxyCompactList}\small\item\em Destructeur. \item\end{DoxyCompactList}\item 
+\hypertarget{classDataGestion_a6bcdb2eab356aed159c8c2b9e315012f}{
+\hyperlink{classPile}{Pile}$<$ \hyperlink{classNombre_1_1Data}{Data} $>$ \& \hyperlink{classDataGestion_a6bcdb2eab356aed159c8c2b9e315012f}{getStockage} () const }
+\label{classDataGestion_a6bcdb2eab356aed159c8c2b9e315012f}
+
+\begin{DoxyCompactList}\small\item\em retourne la pile de stockage \item\end{DoxyCompactList}\item 
+\hypertarget{classDataGestion_afa53de93827d9a0902f60b803e3630dc}{
+\hyperlink{classPile}{Pile}$<$ \hyperlink{classNombre_1_1Data}{Data} $>$ \& \hyperlink{classDataGestion_afa53de93827d9a0902f60b803e3630dc}{getRetablir} () const }
+\label{classDataGestion_afa53de93827d9a0902f60b803e3630dc}
+
+\begin{DoxyCompactList}\small\item\em retourne la pile rétablir \item\end{DoxyCompactList}\item 
+\hypertarget{classDataGestion_adf1fe14cc9df3df0c96fe316cb620090}{
+\hyperlink{classPile}{Pile}$<$ QString $>$ \& \hyperlink{classDataGestion_adf1fe14cc9df3df0c96fe316cb620090}{getAffichage} () const }
+\label{classDataGestion_adf1fe14cc9df3df0c96fe316cb620090}
+
+\begin{DoxyCompactList}\small\item\em retourne la pile d'affichage \item\end{DoxyCompactList}\item 
+void \hyperlink{classDataGestion_a4ceeb6d89c71d7b351580ddf09666d77}{setStockage} (\hyperlink{classPile}{Pile}$<$ \hyperlink{classNombre_1_1Data}{Data} $>$ \&p)
+\begin{DoxyCompactList}\small\item\em change la pile de stockage \item\end{DoxyCompactList}\item 
+void \hyperlink{classDataGestion_a8f277703ec10e113a9dc15770efa2172}{setRetablir} (\hyperlink{classPile}{Pile}$<$ \hyperlink{classNombre_1_1Data}{Data} $>$ \&p)
+\begin{DoxyCompactList}\small\item\em change la pile rétablir \item\end{DoxyCompactList}\item 
+void \hyperlink{classDataGestion_a694f774208e240a7be99010b89f0d1db}{setAffichage} (\hyperlink{classPile}{Pile}$<$ QString $>$ \&p)
+\begin{DoxyCompactList}\small\item\em change la pile d'affichage \item\end{DoxyCompactList}\item 
+\hypertarget{classDataGestion_a3cc348effd70a7ca7f1bf1a5dfb826cc}{
+\hyperlink{classFactory}{Factory} \& \hyperlink{classDataGestion_a3cc348effd70a7ca7f1bf1a5dfb826cc}{getFactory} () const }
+\label{classDataGestion_a3cc348effd70a7ca7f1bf1a5dfb826cc}
+
+\begin{DoxyCompactList}\small\item\em retourne l'instance de la factory \item\end{DoxyCompactList}\item 
+void \hyperlink{classDataGestion_a549e4be0e31d71db589e8028ce2f9f09}{parse} (QString expression)
+\begin{DoxyCompactList}\small\item\em décode une entrée utlisateur \item\end{DoxyCompactList}\item 
+void \hyperlink{classDataGestion_a000582dcd78e4058a05efd3180f84a7c}{calcul} ()
+\begin{DoxyCompactList}\small\item\em effectue le calcul \item\end{DoxyCompactList}\item 
+\hypertarget{classDataGestion_ae6cfb21caca7d8def491a174490618b3}{
+void \hyperlink{classDataGestion_ae6cfb21caca7d8def491a174490618b3}{annuler} ()}
+\label{classDataGestion_ae6cfb21caca7d8def491a174490618b3}
+
+\begin{DoxyCompactList}\small\item\em annule les x dernières opérations sur la pile de stockage \item\end{DoxyCompactList}\item 
+\hypertarget{classDataGestion_a26812b599e4be247ba00747a78806331}{
+void \hyperlink{classDataGestion_a26812b599e4be247ba00747a78806331}{retablir} ()}
+\label{classDataGestion_a26812b599e4be247ba00747a78806331}
+
+\begin{DoxyCompactList}\small\item\em rétablit les x dernières opérations sur la pile de stockage \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+classe servant de facade entre les données du programme et l'interface Permet de gérer tout le programme 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classDataGestion_a5d90c5f766c07879a9e93a3e52e1a0c7}{
+\index{DataGestion@{DataGestion}!DataGestion@{DataGestion}}
+\index{DataGestion@{DataGestion}!DataGestion@{DataGestion}}
+\subsubsection[{DataGestion}]{\setlength{\rightskip}{0pt plus 5cm}DataGestion::DataGestion ()}}
+\label{classDataGestion_a5d90c5f766c07879a9e93a3e52e1a0c7}
+
+
+Constructeur. 
+
+Constructeur de la classe \hypertarget{classDataGestion_a79229dcf9eb13b003468c8543a195311}{
+\index{DataGestion@{DataGestion}!$\sim$DataGestion@{$\sim$DataGestion}}
+\index{$\sim$DataGestion@{$\sim$DataGestion}!DataGestion@{DataGestion}}
+\subsubsection[{$\sim$DataGestion}]{\setlength{\rightskip}{0pt plus 5cm}DataGestion::$\sim$DataGestion ()}}
+\label{classDataGestion_a79229dcf9eb13b003468c8543a195311}
+
+
+Destructeur. 
+
+Destructeur de la classe 
+
+\subsection{Member Function Documentation}
+\hypertarget{classDataGestion_a000582dcd78e4058a05efd3180f84a7c}{
+\index{DataGestion@{DataGestion}!calcul@{calcul}}
+\index{calcul@{calcul}!DataGestion@{DataGestion}}
+\subsubsection[{calcul}]{\setlength{\rightskip}{0pt plus 5cm}void DataGestion::calcul ()}}
+\label{classDataGestion_a000582dcd78e4058a05efd3180f84a7c}
+
+
+effectue le calcul 
+
+Utilise le pattern strategy des opérations pour calculer et mettre les piles à jour \hypertarget{classDataGestion_a549e4be0e31d71db589e8028ce2f9f09}{
+\index{DataGestion@{DataGestion}!parse@{parse}}
+\index{parse@{parse}!DataGestion@{DataGestion}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}void DataGestion::parse (QString {\em expression})}}
+\label{classDataGestion_a549e4be0e31d71db589e8028ce2f9f09}
+
+
+décode une entrée utlisateur 
+
+Appel la factory, crée les Data qu'il faut, remplit les piles et appelle calcul
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em expression}]: la QStrign entrée par l'utilisateur \end{DoxyParams}
+\hypertarget{classDataGestion_a694f774208e240a7be99010b89f0d1db}{
+\index{DataGestion@{DataGestion}!setAffichage@{setAffichage}}
+\index{setAffichage@{setAffichage}!DataGestion@{DataGestion}}
+\subsubsection[{setAffichage}]{\setlength{\rightskip}{0pt plus 5cm}void DataGestion::setAffichage ({\bf Pile}$<$ QString $>$ \& {\em p})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classDataGestion_a694f774208e240a7be99010b89f0d1db}
+
+
+change la pile d'affichage 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]: nouvelle pile \end{DoxyParams}
+\hypertarget{classDataGestion_a8f277703ec10e113a9dc15770efa2172}{
+\index{DataGestion@{DataGestion}!setRetablir@{setRetablir}}
+\index{setRetablir@{setRetablir}!DataGestion@{DataGestion}}
+\subsubsection[{setRetablir}]{\setlength{\rightskip}{0pt plus 5cm}void DataGestion::setRetablir ({\bf Pile}$<$ {\bf Data} $>$ \& {\em p})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classDataGestion_a8f277703ec10e113a9dc15770efa2172}
+
+
+change la pile rétablir 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]: nouvelle pile \end{DoxyParams}
+\hypertarget{classDataGestion_a4ceeb6d89c71d7b351580ddf09666d77}{
+\index{DataGestion@{DataGestion}!setStockage@{setStockage}}
+\index{setStockage@{setStockage}!DataGestion@{DataGestion}}
+\subsubsection[{setStockage}]{\setlength{\rightskip}{0pt plus 5cm}void DataGestion::setStockage ({\bf Pile}$<$ {\bf Data} $>$ \& {\em p})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classDataGestion_a4ceeb6d89c71d7b351580ddf09666d77}
+
+
+change la pile de stockage 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]: nouvelle pile \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+datagestion.h\item 
+datagestion.cpp\end{DoxyCompactItemize}
